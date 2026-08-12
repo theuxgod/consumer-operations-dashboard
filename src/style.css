@@ -1,0 +1,33 @@
+:root {
+  color-scheme: dark;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #0d0f14;
+  color: #e6e8ee;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#app {
+  width: 100%;
+  min-height: 100svh;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}

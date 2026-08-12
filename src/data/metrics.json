@@ -1,0 +1,3283 @@
+{
+  "meta": {
+    "company": "Meridian Audio Labs",
+    "currency": "USD",
+    "generatedAt": "2026-08-12",
+    "periodLabel": "Q3 2026",
+    "dateRanges": [
+      {
+        "key": "7d",
+        "label": "Last 7 days"
+      },
+      {
+        "key": "30d",
+        "label": "Last 30 days"
+      },
+      {
+        "key": "quarter",
+        "label": "Quarter"
+      },
+      {
+        "key": "ytd",
+        "label": "Year to Date"
+      }
+    ],
+    "regions": [
+      {
+        "key": "global",
+        "label": "Global"
+      },
+      {
+        "key": "northAmerica",
+        "label": "North America"
+      },
+      {
+        "key": "europe",
+        "label": "Europe"
+      },
+      {
+        "key": "asiaPacific",
+        "label": "Asia Pacific"
+      }
+    ],
+    "categories": [
+      "Bass Amplifiers",
+      "Speakers",
+      "Studio Monitors",
+      "Headphones",
+      "Accessories"
+    ]
+  },
+  "kpis": {
+    "global": {
+      "7d": {
+        "revenue": {
+          "value": 1112833,
+          "target": 1077611,
+          "targetAttainmentPct": 103.3,
+          "deltaPct": 7.1
+        },
+        "unitsSold": {
+          "value": 6001,
+          "deltaPct": 0.9
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 2,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 1057936,
+          "deltaPct": 9.4,
+          "direction": "up"
+        }
+      },
+      "30d": {
+        "revenue": {
+          "value": 4769283,
+          "target": 4618332,
+          "targetAttainmentPct": 103.3,
+          "deltaPct": 7.5
+        },
+        "unitsSold": {
+          "value": 25717,
+          "deltaPct": 6.4
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 1057936,
+          "deltaPct": 9.7,
+          "direction": "up"
+        }
+      },
+      "quarter": {
+        "revenue": {
+          "value": 14307850,
+          "target": 13854996,
+          "targetAttainmentPct": 103.3,
+          "deltaPct": 10
+        },
+        "unitsSold": {
+          "value": 77150,
+          "deltaPct": 6.5
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 1057936,
+          "deltaPct": 11.1,
+          "direction": "up"
+        }
+      },
+      "ytd": {
+        "revenue": {
+          "value": 34624997,
+          "target": 33529090,
+          "targetAttainmentPct": 103.3,
+          "deltaPct": 15.2
+        },
+        "unitsSold": {
+          "value": 186703,
+          "deltaPct": 16
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 1057936,
+          "deltaPct": 15.4,
+          "direction": "up"
+        }
+      }
+    },
+    "northAmerica": {
+      "7d": {
+        "revenue": {
+          "value": 483341,
+          "target": 467532,
+          "targetAttainmentPct": 103.4,
+          "deltaPct": 3.1
+        },
+        "unitsSold": {
+          "value": 2628,
+          "deltaPct": 1.3
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 2,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 476479,
+          "deltaPct": 13.4,
+          "direction": "up"
+        }
+      },
+      "30d": {
+        "revenue": {
+          "value": 2071459,
+          "target": 2003707,
+          "targetAttainmentPct": 103.4,
+          "deltaPct": 5
+        },
+        "unitsSold": {
+          "value": 11264,
+          "deltaPct": 4
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 476479,
+          "deltaPct": 12,
+          "direction": "up"
+        }
+      },
+      "quarter": {
+        "revenue": {
+          "value": 6214378,
+          "target": 6011120,
+          "targetAttainmentPct": 103.4,
+          "deltaPct": 9.6
+        },
+        "unitsSold": {
+          "value": 33792,
+          "deltaPct": 9
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 476479,
+          "deltaPct": 7.9,
+          "direction": "up"
+        }
+      },
+      "ytd": {
+        "revenue": {
+          "value": 15038795,
+          "target": 14546910,
+          "targetAttainmentPct": 103.4,
+          "deltaPct": 14.4
+        },
+        "unitsSold": {
+          "value": 81777,
+          "deltaPct": 10.5
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 476479,
+          "deltaPct": 8.8,
+          "direction": "up"
+        }
+      }
+    },
+    "europe": {
+      "7d": {
+        "revenue": {
+          "value": 379221,
+          "target": 366723,
+          "targetAttainmentPct": 103.4,
+          "deltaPct": 1.2
+        },
+        "unitsSold": {
+          "value": 2014,
+          "deltaPct": 1.4
+        },
+        "inventoryRisk": {
+          "value": 6,
+          "delta": 2,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 362288,
+          "deltaPct": 12.3,
+          "direction": "up"
+        }
+      },
+      "30d": {
+        "revenue": {
+          "value": 1625233,
+          "target": 1571672,
+          "targetAttainmentPct": 103.4,
+          "deltaPct": 4.5
+        },
+        "unitsSold": {
+          "value": 8632,
+          "deltaPct": 7.1
+        },
+        "inventoryRisk": {
+          "value": 6,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 362288,
+          "deltaPct": 9,
+          "direction": "up"
+        }
+      },
+      "quarter": {
+        "revenue": {
+          "value": 4875698,
+          "target": 4715015,
+          "targetAttainmentPct": 103.4,
+          "deltaPct": 12.4
+        },
+        "unitsSold": {
+          "value": 25897,
+          "deltaPct": 8.7
+        },
+        "inventoryRisk": {
+          "value": 6,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 362288,
+          "deltaPct": 13.8,
+          "direction": "up"
+        }
+      },
+      "ytd": {
+        "revenue": {
+          "value": 11799189,
+          "target": 11410336,
+          "targetAttainmentPct": 103.4,
+          "deltaPct": 15
+        },
+        "unitsSold": {
+          "value": 62671,
+          "deltaPct": 14.1
+        },
+        "inventoryRisk": {
+          "value": 6,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 362288,
+          "deltaPct": 11.2,
+          "direction": "up"
+        }
+      }
+    },
+    "asiaPacific": {
+      "7d": {
+        "revenue": {
+          "value": 250271,
+          "target": 243356,
+          "targetAttainmentPct": 102.8,
+          "deltaPct": 7.6
+        },
+        "unitsSold": {
+          "value": 1358,
+          "deltaPct": -0.8
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 2,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 231303,
+          "deltaPct": 11.6,
+          "direction": "up"
+        }
+      },
+      "30d": {
+        "revenue": {
+          "value": 1072591,
+          "target": 1042954,
+          "targetAttainmentPct": 102.8,
+          "deltaPct": 8.9
+        },
+        "unitsSold": {
+          "value": 5820,
+          "deltaPct": 6
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 231303,
+          "deltaPct": 9.7,
+          "direction": "up"
+        }
+      },
+      "quarter": {
+        "revenue": {
+          "value": 3217774,
+          "target": 3128862,
+          "targetAttainmentPct": 102.8,
+          "deltaPct": 11.2
+        },
+        "unitsSold": {
+          "value": 17461,
+          "deltaPct": 7.6
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 231303,
+          "deltaPct": 12.6,
+          "direction": "up"
+        }
+      },
+      "ytd": {
+        "revenue": {
+          "value": 7787013,
+          "target": 7571846,
+          "targetAttainmentPct": 102.8,
+          "deltaPct": 14.3
+        },
+        "unitsSold": {
+          "value": 42256,
+          "deltaPct": 11.7
+        },
+        "inventoryRisk": {
+          "value": 7,
+          "delta": 1,
+          "direction": "up"
+        },
+        "revenueAtRisk": {
+          "value": 231303,
+          "deltaPct": 11.3,
+          "direction": "up"
+        }
+      }
+    }
+  },
+  "alerts": [
+    {
+      "id": "ALERT-008",
+      "severity": "critical",
+      "type": "inventory_stockout",
+      "productId": "HP-X3",
+      "productName": "Aura X3 Wireless Headphones",
+      "category": "Headphones",
+      "region": "global",
+      "title": "Aura X3 Wireless Headphones — 5.4 days of inventory remaining",
+      "what": "Only 250 units in stock against a run rate of 46.7/day.",
+      "why": "Strong demand (27% above target) will exhaust stock before replenishment, putting $407,213 of revenue at risk.",
+      "metricLabel": "Days of supply",
+      "metricValue": 5.4,
+      "threshold": 7,
+      "revenueAtRisk": 407213
+    },
+    {
+      "id": "ALERT-001",
+      "severity": "critical",
+      "type": "inventory_stockout",
+      "productId": "BA-800",
+      "productName": "Rumble 800 Bass Combo",
+      "category": "Bass Amplifiers",
+      "region": "global",
+      "title": "Rumble 800 Bass Combo — 4.9 days of inventory remaining",
+      "what": "Only 65 units in stock against a run rate of 13.3/day.",
+      "why": "Strong demand (24% above target) will exhaust stock before replenishment, putting $267,665 of revenue at risk.",
+      "metricLabel": "Days of supply",
+      "metricValue": 4.9,
+      "threshold": 7,
+      "revenueAtRisk": 267665
+    },
+    {
+      "id": "ALERT-005",
+      "severity": "critical",
+      "type": "return_rate",
+      "productId": "SP-H08",
+      "productName": "Halo 8 Portable Speaker",
+      "category": "Speakers",
+      "region": "global",
+      "title": "Halo 8 Portable Speaker — return rate 9.2%",
+      "what": "Returns are running at 9.2% versus a ~3% portfolio baseline.",
+      "why": "Elevated returns erode margin and may signal a quality or expectation gap; roughly $76,669 in revenue is affected.",
+      "metricLabel": "Return rate",
+      "metricValue": 0.092,
+      "threshold": 0.08,
+      "revenueAtRisk": 76669
+    },
+    {
+      "id": "ALERT-011",
+      "severity": "critical",
+      "type": "return_rate",
+      "productId": "HP-P100",
+      "productName": "Pulse P100 Earbuds",
+      "category": "Headphones",
+      "region": "global",
+      "title": "Pulse P100 Earbuds — return rate 8.6%",
+      "what": "Returns are running at 8.6% versus a ~3% portfolio baseline.",
+      "why": "Elevated returns erode margin and may signal a quality or expectation gap; roughly $74,262 in revenue is affected.",
+      "metricLabel": "Return rate",
+      "metricValue": 0.086,
+      "threshold": 0.08,
+      "revenueAtRisk": 74262
+    },
+    {
+      "id": "ALERT-009",
+      "severity": "warning",
+      "type": "demand_surge",
+      "productId": "HP-X3",
+      "productName": "Aura X3 Wireless Headphones",
+      "category": "Headphones",
+      "region": "global",
+      "title": "Aura X3 Wireless Headphones — selling faster than forecast",
+      "what": "Tracking 27% above target with 5.4 days of cover.",
+      "why": "Accelerating demand could turn into a stockout within the quarter if supply is not increased.",
+      "metricLabel": "Sales vs. target",
+      "metricValue": 1.27,
+      "threshold": 1.18,
+      "revenueAtRisk": 407213
+    },
+    {
+      "id": "ALERT-002",
+      "severity": "warning",
+      "type": "demand_surge",
+      "productId": "BA-800",
+      "productName": "Rumble 800 Bass Combo",
+      "category": "Bass Amplifiers",
+      "region": "global",
+      "title": "Rumble 800 Bass Combo — selling faster than forecast",
+      "what": "Tracking 24% above target with 4.9 days of cover.",
+      "why": "Accelerating demand could turn into a stockout within the quarter if supply is not increased.",
+      "metricLabel": "Sales vs. target",
+      "metricValue": 1.24,
+      "threshold": 1.18,
+      "revenueAtRisk": 267665
+    },
+    {
+      "id": "ALERT-006",
+      "severity": "warning",
+      "type": "inventory_low",
+      "productId": "SM-M7",
+      "productName": "Precision M7 Studio Monitor",
+      "category": "Studio Monitors",
+      "region": "global",
+      "title": "Precision M7 Studio Monitor — inventory below two-week cover",
+      "what": "11.6 days of supply remaining at current sales velocity.",
+      "why": "If demand holds, this product will require expedited replenishment to avoid a stockout. $162,970 of revenue is exposed.",
+      "metricLabel": "Days of supply",
+      "metricValue": 11.6,
+      "threshold": 14,
+      "revenueAtRisk": 162970
+    },
+    {
+      "id": "ALERT-004",
+      "severity": "warning",
+      "type": "demand_surge",
+      "productId": "SP-V15",
+      "productName": "Vantage V15 PA Speaker",
+      "category": "Speakers",
+      "region": "global",
+      "title": "Vantage V15 PA Speaker — selling faster than forecast",
+      "what": "Tracking 21% above target with 21.8 days of cover.",
+      "why": "Accelerating demand could turn into a stockout within the quarter if supply is not increased.",
+      "metricLabel": "Sales vs. target",
+      "metricValue": 1.21,
+      "threshold": 1.18,
+      "revenueAtRisk": 67943
+    },
+    {
+      "id": "ALERT-010",
+      "severity": "warning",
+      "type": "repair_rate",
+      "productId": "HP-C2",
+      "productName": "Cadence C2 Monitoring Headphones",
+      "category": "Headphones",
+      "region": "global",
+      "title": "Cadence C2 Monitoring Headphones — repair rate 6.4%",
+      "what": "Repair requests are at 6.4%, well above the ~1.5% norm for this category.",
+      "why": "A rising repair rate increases warranty cost and points to a potential component or reliability issue.",
+      "metricLabel": "Repair rate",
+      "metricValue": 0.064,
+      "threshold": 0.05,
+      "revenueAtRisk": 0
+    },
+    {
+      "id": "ALERT-012",
+      "severity": "warning",
+      "type": "repair_rate",
+      "productId": "AC-PWR",
+      "productName": "PowerCore Amp Power Supply",
+      "category": "Accessories",
+      "region": "global",
+      "title": "PowerCore Amp Power Supply — repair rate 5.8%",
+      "what": "Repair requests are at 5.8%, well above the ~1.5% norm for this category.",
+      "why": "A rising repair rate increases warranty cost and points to a potential component or reliability issue.",
+      "metricLabel": "Repair rate",
+      "metricValue": 0.058,
+      "threshold": 0.05,
+      "revenueAtRisk": 0
+    },
+    {
+      "id": "ALERT-003",
+      "severity": "info",
+      "type": "underperformance",
+      "productId": "BA-210",
+      "productName": "Fathom 210 Bass Cabinet",
+      "category": "Bass Amplifiers",
+      "region": "global",
+      "title": "Fathom 210 Bass Cabinet — 22% below target",
+      "what": "Revenue is 22% under plan with 79.7 days of stock on hand.",
+      "why": "Slow sell-through combined with high inventory ties up working capital and may warrant promotion or price review.",
+      "metricLabel": "Sales vs. target",
+      "metricValue": 0.78,
+      "threshold": 0.8,
+      "revenueAtRisk": 0
+    },
+    {
+      "id": "ALERT-007",
+      "severity": "info",
+      "type": "underperformance",
+      "productId": "SM-R1",
+      "productName": "Reference One Monitor",
+      "category": "Studio Monitors",
+      "region": "global",
+      "title": "Reference One Monitor — 28% below target",
+      "what": "Revenue is 28% under plan with 101.3 days of stock on hand.",
+      "why": "Slow sell-through combined with high inventory ties up working capital and may warrant promotion or price review.",
+      "metricLabel": "Sales vs. target",
+      "metricValue": 0.72,
+      "threshold": 0.8,
+      "revenueAtRisk": 0
+    }
+  ],
+  "salesTrend": {
+    "global": {
+      "7d": [
+        {
+          "period": "2026-08-06",
+          "revenue": 135571,
+          "target": 153944,
+          "units": 731
+        },
+        {
+          "period": "2026-08-07",
+          "revenue": 161493,
+          "target": 153944,
+          "units": 871
+        },
+        {
+          "period": "2026-08-08",
+          "revenue": 149002,
+          "target": 153944,
+          "units": 803
+        },
+        {
+          "period": "2026-08-09",
+          "revenue": 145687,
+          "target": 153944,
+          "units": 786
+        },
+        {
+          "period": "2026-08-10",
+          "revenue": 184515,
+          "target": 153944,
+          "units": 995
+        },
+        {
+          "period": "2026-08-11",
+          "revenue": 164955,
+          "target": 153944,
+          "units": 890
+        },
+        {
+          "period": "2026-08-12",
+          "revenue": 171610,
+          "target": 153944,
+          "units": 925
+        }
+      ],
+      "30d": [
+        {
+          "period": "2026-07-14",
+          "revenue": 142451,
+          "target": 153944,
+          "units": 768
+        },
+        {
+          "period": "2026-07-15",
+          "revenue": 140580,
+          "target": 153944,
+          "units": 758
+        },
+        {
+          "period": "2026-07-16",
+          "revenue": 135797,
+          "target": 153944,
+          "units": 732
+        },
+        {
+          "period": "2026-07-17",
+          "revenue": 155087,
+          "target": 153944,
+          "units": 836
+        },
+        {
+          "period": "2026-07-18",
+          "revenue": 128783,
+          "target": 153944,
+          "units": 694
+        },
+        {
+          "period": "2026-07-19",
+          "revenue": 147657,
+          "target": 153944,
+          "units": 796
+        },
+        {
+          "period": "2026-07-20",
+          "revenue": 132511,
+          "target": 153944,
+          "units": 715
+        },
+        {
+          "period": "2026-07-21",
+          "revenue": 136316,
+          "target": 153944,
+          "units": 735
+        },
+        {
+          "period": "2026-07-22",
+          "revenue": 136106,
+          "target": 153944,
+          "units": 734
+        },
+        {
+          "period": "2026-07-23",
+          "revenue": 156194,
+          "target": 153944,
+          "units": 842
+        },
+        {
+          "period": "2026-07-24",
+          "revenue": 152300,
+          "target": 153944,
+          "units": 821
+        },
+        {
+          "period": "2026-07-25",
+          "revenue": 144467,
+          "target": 153944,
+          "units": 779
+        },
+        {
+          "period": "2026-07-26",
+          "revenue": 172686,
+          "target": 153944,
+          "units": 931
+        },
+        {
+          "period": "2026-07-27",
+          "revenue": 157311,
+          "target": 153944,
+          "units": 848
+        },
+        {
+          "period": "2026-07-28",
+          "revenue": 159767,
+          "target": 153944,
+          "units": 861
+        },
+        {
+          "period": "2026-07-29",
+          "revenue": 159283,
+          "target": 153944,
+          "units": 859
+        },
+        {
+          "period": "2026-07-30",
+          "revenue": 176386,
+          "target": 153944,
+          "units": 951
+        },
+        {
+          "period": "2026-07-31",
+          "revenue": 156961,
+          "target": 153944,
+          "units": 846
+        },
+        {
+          "period": "2026-08-01",
+          "revenue": 168344,
+          "target": 153944,
+          "units": 908
+        },
+        {
+          "period": "2026-08-02",
+          "revenue": 158191,
+          "target": 153944,
+          "units": 853
+        },
+        {
+          "period": "2026-08-03",
+          "revenue": 174829,
+          "target": 153944,
+          "units": 943
+        },
+        {
+          "period": "2026-08-04",
+          "revenue": 160169,
+          "target": 153944,
+          "units": 864
+        },
+        {
+          "period": "2026-08-05",
+          "revenue": 181997,
+          "target": 153944,
+          "units": 981
+        },
+        {
+          "period": "2026-08-06",
+          "revenue": 191753,
+          "target": 153944,
+          "units": 1034
+        },
+        {
+          "period": "2026-08-07",
+          "revenue": 157720,
+          "target": 153944,
+          "units": 850
+        },
+        {
+          "period": "2026-08-08",
+          "revenue": 168313,
+          "target": 153944,
+          "units": 908
+        },
+        {
+          "period": "2026-08-09",
+          "revenue": 198500,
+          "target": 153944,
+          "units": 1070
+        },
+        {
+          "period": "2026-08-10",
+          "revenue": 165203,
+          "target": 153944,
+          "units": 891
+        },
+        {
+          "period": "2026-08-11",
+          "revenue": 186614,
+          "target": 153944,
+          "units": 1006
+        },
+        {
+          "period": "2026-08-12",
+          "revenue": 167006,
+          "target": 153944,
+          "units": 901
+        }
+      ],
+      "quarter": [
+        {
+          "period": "W1",
+          "revenue": 852788,
+          "target": 1065769,
+          "units": 4598
+        },
+        {
+          "period": "W2",
+          "revenue": 1008339,
+          "target": 1065769,
+          "units": 5437
+        },
+        {
+          "period": "W3",
+          "revenue": 999425,
+          "target": 1065769,
+          "units": 5389
+        },
+        {
+          "period": "W4",
+          "revenue": 971584,
+          "target": 1065769,
+          "units": 5239
+        },
+        {
+          "period": "W5",
+          "revenue": 1125636,
+          "target": 1065769,
+          "units": 6070
+        },
+        {
+          "period": "W6",
+          "revenue": 1050310,
+          "target": 1065769,
+          "units": 5663
+        },
+        {
+          "period": "W7",
+          "revenue": 1096594,
+          "target": 1065769,
+          "units": 5913
+        },
+        {
+          "period": "W8",
+          "revenue": 1114411,
+          "target": 1065769,
+          "units": 6009
+        },
+        {
+          "period": "W9",
+          "revenue": 1289029,
+          "target": 1065769,
+          "units": 6951
+        },
+        {
+          "period": "W10",
+          "revenue": 1114510,
+          "target": 1065769,
+          "units": 6010
+        },
+        {
+          "period": "W11",
+          "revenue": 1228311,
+          "target": 1065769,
+          "units": 6623
+        },
+        {
+          "period": "W12",
+          "revenue": 1323777,
+          "target": 1065769,
+          "units": 7138
+        },
+        {
+          "period": "W13",
+          "revenue": 1133137,
+          "target": 1065769,
+          "units": 6110
+        }
+      ],
+      "ytd": [
+        {
+          "period": "Jan",
+          "revenue": 3467406,
+          "target": 4191136,
+          "units": 18697
+        },
+        {
+          "period": "Feb",
+          "revenue": 4096271,
+          "target": 4191136,
+          "units": 22088
+        },
+        {
+          "period": "Mar",
+          "revenue": 4108984,
+          "target": 4191136,
+          "units": 22156
+        },
+        {
+          "period": "Apr",
+          "revenue": 4085915,
+          "target": 4191136,
+          "units": 22032
+        },
+        {
+          "period": "May",
+          "revenue": 4458565,
+          "target": 4191136,
+          "units": 24041
+        },
+        {
+          "period": "Jun",
+          "revenue": 4789539,
+          "target": 4191136,
+          "units": 25826
+        },
+        {
+          "period": "Jul",
+          "revenue": 4835361,
+          "target": 4191136,
+          "units": 26073
+        },
+        {
+          "period": "Aug",
+          "revenue": 4782957,
+          "target": 4191136,
+          "units": 25790
+        }
+      ]
+    },
+    "northAmerica": {
+      "7d": [
+        {
+          "period": "2026-08-06",
+          "revenue": 56554,
+          "target": 66790,
+          "units": 307
+        },
+        {
+          "period": "2026-08-07",
+          "revenue": 63482,
+          "target": 66790,
+          "units": 345
+        },
+        {
+          "period": "2026-08-08",
+          "revenue": 70916,
+          "target": 66790,
+          "units": 386
+        },
+        {
+          "period": "2026-08-09",
+          "revenue": 70622,
+          "target": 66790,
+          "units": 384
+        },
+        {
+          "period": "2026-08-10",
+          "revenue": 64645,
+          "target": 66790,
+          "units": 351
+        },
+        {
+          "period": "2026-08-11",
+          "revenue": 73749,
+          "target": 66790,
+          "units": 401
+        },
+        {
+          "period": "2026-08-12",
+          "revenue": 83373,
+          "target": 66790,
+          "units": 453
+        }
+      ],
+      "30d": [
+        {
+          "period": "2026-07-14",
+          "revenue": 64501,
+          "target": 66790,
+          "units": 351
+        },
+        {
+          "period": "2026-07-15",
+          "revenue": 52985,
+          "target": 66790,
+          "units": 288
+        },
+        {
+          "period": "2026-07-16",
+          "revenue": 53167,
+          "target": 66790,
+          "units": 289
+        },
+        {
+          "period": "2026-07-17",
+          "revenue": 63506,
+          "target": 66790,
+          "units": 345
+        },
+        {
+          "period": "2026-07-18",
+          "revenue": 55323,
+          "target": 66790,
+          "units": 301
+        },
+        {
+          "period": "2026-07-19",
+          "revenue": 58238,
+          "target": 66790,
+          "units": 317
+        },
+        {
+          "period": "2026-07-20",
+          "revenue": 65493,
+          "target": 66790,
+          "units": 356
+        },
+        {
+          "period": "2026-07-21",
+          "revenue": 70558,
+          "target": 66790,
+          "units": 384
+        },
+        {
+          "period": "2026-07-22",
+          "revenue": 68737,
+          "target": 66790,
+          "units": 374
+        },
+        {
+          "period": "2026-07-23",
+          "revenue": 71197,
+          "target": 66790,
+          "units": 387
+        },
+        {
+          "period": "2026-07-24",
+          "revenue": 69716,
+          "target": 66790,
+          "units": 379
+        },
+        {
+          "period": "2026-07-25",
+          "revenue": 72727,
+          "target": 66790,
+          "units": 395
+        },
+        {
+          "period": "2026-07-26",
+          "revenue": 65856,
+          "target": 66790,
+          "units": 358
+        },
+        {
+          "period": "2026-07-27",
+          "revenue": 59829,
+          "target": 66790,
+          "units": 325
+        },
+        {
+          "period": "2026-07-28",
+          "revenue": 66549,
+          "target": 66790,
+          "units": 362
+        },
+        {
+          "period": "2026-07-29",
+          "revenue": 63761,
+          "target": 66790,
+          "units": 347
+        },
+        {
+          "period": "2026-07-30",
+          "revenue": 67024,
+          "target": 66790,
+          "units": 364
+        },
+        {
+          "period": "2026-07-31",
+          "revenue": 69463,
+          "target": 66790,
+          "units": 378
+        },
+        {
+          "period": "2026-08-01",
+          "revenue": 73637,
+          "target": 66790,
+          "units": 400
+        },
+        {
+          "period": "2026-08-02",
+          "revenue": 74458,
+          "target": 66790,
+          "units": 405
+        },
+        {
+          "period": "2026-08-03",
+          "revenue": 70988,
+          "target": 66790,
+          "units": 386
+        },
+        {
+          "period": "2026-08-04",
+          "revenue": 77406,
+          "target": 66790,
+          "units": 421
+        },
+        {
+          "period": "2026-08-05",
+          "revenue": 66862,
+          "target": 66790,
+          "units": 364
+        },
+        {
+          "period": "2026-08-06",
+          "revenue": 80832,
+          "target": 66790,
+          "units": 440
+        },
+        {
+          "period": "2026-08-07",
+          "revenue": 71538,
+          "target": 66790,
+          "units": 389
+        },
+        {
+          "period": "2026-08-08",
+          "revenue": 78313,
+          "target": 66790,
+          "units": 426
+        },
+        {
+          "period": "2026-08-09",
+          "revenue": 67659,
+          "target": 66790,
+          "units": 368
+        },
+        {
+          "period": "2026-08-10",
+          "revenue": 83721,
+          "target": 66790,
+          "units": 455
+        },
+        {
+          "period": "2026-08-11",
+          "revenue": 82827,
+          "target": 66790,
+          "units": 450
+        },
+        {
+          "period": "2026-08-12",
+          "revenue": 84585,
+          "target": 66790,
+          "units": 460
+        }
+      ],
+      "quarter": [
+        {
+          "period": "W1",
+          "revenue": 376727,
+          "target": 462394,
+          "units": 2049
+        },
+        {
+          "period": "W2",
+          "revenue": 469257,
+          "target": 462394,
+          "units": 2552
+        },
+        {
+          "period": "W3",
+          "revenue": 412192,
+          "target": 462394,
+          "units": 2241
+        },
+        {
+          "period": "W4",
+          "revenue": 495352,
+          "target": 462394,
+          "units": 2694
+        },
+        {
+          "period": "W5",
+          "revenue": 468631,
+          "target": 462394,
+          "units": 2548
+        },
+        {
+          "period": "W6",
+          "revenue": 522509,
+          "target": 462394,
+          "units": 2841
+        },
+        {
+          "period": "W7",
+          "revenue": 453322,
+          "target": 462394,
+          "units": 2465
+        },
+        {
+          "period": "W8",
+          "revenue": 470173,
+          "target": 462394,
+          "units": 2557
+        },
+        {
+          "period": "W9",
+          "revenue": 452284,
+          "target": 462394,
+          "units": 2459
+        },
+        {
+          "period": "W10",
+          "revenue": 467995,
+          "target": 462394,
+          "units": 2545
+        },
+        {
+          "period": "W11",
+          "revenue": 535932,
+          "target": 462394,
+          "units": 2914
+        },
+        {
+          "period": "W12",
+          "revenue": 551713,
+          "target": 462394,
+          "units": 3000
+        },
+        {
+          "period": "W13",
+          "revenue": 538292,
+          "target": 462394,
+          "units": 2927
+        }
+      ],
+      "ytd": [
+        {
+          "period": "Jan",
+          "revenue": 1625838,
+          "target": 1818364,
+          "units": 8841
+        },
+        {
+          "period": "Feb",
+          "revenue": 1596275,
+          "target": 1818364,
+          "units": 8680
+        },
+        {
+          "period": "Mar",
+          "revenue": 1900711,
+          "target": 1818364,
+          "units": 10336
+        },
+        {
+          "period": "Apr",
+          "revenue": 1748570,
+          "target": 1818364,
+          "units": 9508
+        },
+        {
+          "period": "May",
+          "revenue": 2077312,
+          "target": 1818364,
+          "units": 11296
+        },
+        {
+          "period": "Jun",
+          "revenue": 2004320,
+          "target": 1818364,
+          "units": 10899
+        },
+        {
+          "period": "Jul",
+          "revenue": 1880595,
+          "target": 1818364,
+          "units": 10226
+        },
+        {
+          "period": "Aug",
+          "revenue": 2205173,
+          "target": 1818364,
+          "units": 11991
+        }
+      ]
+    },
+    "europe": {
+      "7d": [
+        {
+          "period": "2026-08-06",
+          "revenue": 43798,
+          "target": 52389,
+          "units": 233
+        },
+        {
+          "period": "2026-08-07",
+          "revenue": 50795,
+          "target": 52389,
+          "units": 270
+        },
+        {
+          "period": "2026-08-08",
+          "revenue": 50782,
+          "target": 52389,
+          "units": 270
+        },
+        {
+          "period": "2026-08-09",
+          "revenue": 59560,
+          "target": 52389,
+          "units": 316
+        },
+        {
+          "period": "2026-08-10",
+          "revenue": 57823,
+          "target": 52389,
+          "units": 307
+        },
+        {
+          "period": "2026-08-11",
+          "revenue": 51896,
+          "target": 52389,
+          "units": 276
+        },
+        {
+          "period": "2026-08-12",
+          "revenue": 64567,
+          "target": 52389,
+          "units": 343
+        }
+      ],
+      "30d": [
+        {
+          "period": "2026-07-14",
+          "revenue": 41262,
+          "target": 52389,
+          "units": 219
+        },
+        {
+          "period": "2026-07-15",
+          "revenue": 50749,
+          "target": 52389,
+          "units": 270
+        },
+        {
+          "period": "2026-07-16",
+          "revenue": 42757,
+          "target": 52389,
+          "units": 227
+        },
+        {
+          "period": "2026-07-17",
+          "revenue": 52336,
+          "target": 52389,
+          "units": 278
+        },
+        {
+          "period": "2026-07-18",
+          "revenue": 52399,
+          "target": 52389,
+          "units": 278
+        },
+        {
+          "period": "2026-07-19",
+          "revenue": 51580,
+          "target": 52389,
+          "units": 274
+        },
+        {
+          "period": "2026-07-20",
+          "revenue": 44392,
+          "target": 52389,
+          "units": 236
+        },
+        {
+          "period": "2026-07-21",
+          "revenue": 52417,
+          "target": 52389,
+          "units": 278
+        },
+        {
+          "period": "2026-07-22",
+          "revenue": 47606,
+          "target": 52389,
+          "units": 253
+        },
+        {
+          "period": "2026-07-23",
+          "revenue": 55990,
+          "target": 52389,
+          "units": 297
+        },
+        {
+          "period": "2026-07-24",
+          "revenue": 47594,
+          "target": 52389,
+          "units": 253
+        },
+        {
+          "period": "2026-07-25",
+          "revenue": 47490,
+          "target": 52389,
+          "units": 252
+        },
+        {
+          "period": "2026-07-26",
+          "revenue": 49944,
+          "target": 52389,
+          "units": 265
+        },
+        {
+          "period": "2026-07-27",
+          "revenue": 58574,
+          "target": 52389,
+          "units": 311
+        },
+        {
+          "period": "2026-07-28",
+          "revenue": 49524,
+          "target": 52389,
+          "units": 263
+        },
+        {
+          "period": "2026-07-29",
+          "revenue": 47667,
+          "target": 52389,
+          "units": 253
+        },
+        {
+          "period": "2026-07-30",
+          "revenue": 60137,
+          "target": 52389,
+          "units": 319
+        },
+        {
+          "period": "2026-07-31",
+          "revenue": 58642,
+          "target": 52389,
+          "units": 311
+        },
+        {
+          "period": "2026-08-01",
+          "revenue": 54886,
+          "target": 52389,
+          "units": 292
+        },
+        {
+          "period": "2026-08-02",
+          "revenue": 59116,
+          "target": 52389,
+          "units": 314
+        },
+        {
+          "period": "2026-08-03",
+          "revenue": 54709,
+          "target": 52389,
+          "units": 291
+        },
+        {
+          "period": "2026-08-04",
+          "revenue": 53728,
+          "target": 52389,
+          "units": 285
+        },
+        {
+          "period": "2026-08-05",
+          "revenue": 57954,
+          "target": 52389,
+          "units": 308
+        },
+        {
+          "period": "2026-08-06",
+          "revenue": 61709,
+          "target": 52389,
+          "units": 328
+        },
+        {
+          "period": "2026-08-07",
+          "revenue": 59799,
+          "target": 52389,
+          "units": 318
+        },
+        {
+          "period": "2026-08-08",
+          "revenue": 62898,
+          "target": 52389,
+          "units": 334
+        },
+        {
+          "period": "2026-08-09",
+          "revenue": 56656,
+          "target": 52389,
+          "units": 301
+        },
+        {
+          "period": "2026-08-10",
+          "revenue": 64838,
+          "target": 52389,
+          "units": 344
+        },
+        {
+          "period": "2026-08-11",
+          "revenue": 62140,
+          "target": 52389,
+          "units": 330
+        },
+        {
+          "period": "2026-08-12",
+          "revenue": 65739,
+          "target": 52389,
+          "units": 349
+        }
+      ],
+      "quarter": [
+        {
+          "period": "W1",
+          "revenue": 357993,
+          "target": 362693,
+          "units": 1901
+        },
+        {
+          "period": "W2",
+          "revenue": 308187,
+          "target": 362693,
+          "units": 1637
+        },
+        {
+          "period": "W3",
+          "revenue": 348549,
+          "target": 362693,
+          "units": 1851
+        },
+        {
+          "period": "W4",
+          "revenue": 331934,
+          "target": 362693,
+          "units": 1763
+        },
+        {
+          "period": "W5",
+          "revenue": 364431,
+          "target": 362693,
+          "units": 1936
+        },
+        {
+          "period": "W6",
+          "revenue": 372467,
+          "target": 362693,
+          "units": 1978
+        },
+        {
+          "period": "W7",
+          "revenue": 411686,
+          "target": 362693,
+          "units": 2187
+        },
+        {
+          "period": "W8",
+          "revenue": 410497,
+          "target": 362693,
+          "units": 2180
+        },
+        {
+          "period": "W9",
+          "revenue": 423577,
+          "target": 362693,
+          "units": 2250
+        },
+        {
+          "period": "W10",
+          "revenue": 366203,
+          "target": 362693,
+          "units": 1945
+        },
+        {
+          "period": "W11",
+          "revenue": 415540,
+          "target": 362693,
+          "units": 2207
+        },
+        {
+          "period": "W12",
+          "revenue": 372167,
+          "target": 362693,
+          "units": 1977
+        },
+        {
+          "period": "W13",
+          "revenue": 392466,
+          "target": 362693,
+          "units": 2085
+        }
+      ],
+      "ytd": [
+        {
+          "period": "Jan",
+          "revenue": 1171098,
+          "target": 1426292,
+          "units": 6220
+        },
+        {
+          "period": "Feb",
+          "revenue": 1426529,
+          "target": 1426292,
+          "units": 7577
+        },
+        {
+          "period": "Mar",
+          "revenue": 1357283,
+          "target": 1426292,
+          "units": 7209
+        },
+        {
+          "period": "Apr",
+          "revenue": 1492985,
+          "target": 1426292,
+          "units": 7930
+        },
+        {
+          "period": "May",
+          "revenue": 1671726,
+          "target": 1426292,
+          "units": 8879
+        },
+        {
+          "period": "Jun",
+          "revenue": 1685524,
+          "target": 1426292,
+          "units": 8953
+        },
+        {
+          "period": "Jul",
+          "revenue": 1488406,
+          "target": 1426292,
+          "units": 7906
+        },
+        {
+          "period": "Aug",
+          "revenue": 1505638,
+          "target": 1426292,
+          "units": 7997
+        }
+      ]
+    },
+    "asiaPacific": {
+      "7d": [
+        {
+          "period": "2026-08-06",
+          "revenue": 29275,
+          "target": 34765,
+          "units": 159
+        },
+        {
+          "period": "2026-08-07",
+          "revenue": 34671,
+          "target": 34765,
+          "units": 188
+        },
+        {
+          "period": "2026-08-08",
+          "revenue": 36395,
+          "target": 34765,
+          "units": 197
+        },
+        {
+          "period": "2026-08-09",
+          "revenue": 33983,
+          "target": 34765,
+          "units": 184
+        },
+        {
+          "period": "2026-08-10",
+          "revenue": 35302,
+          "target": 34765,
+          "units": 192
+        },
+        {
+          "period": "2026-08-11",
+          "revenue": 38967,
+          "target": 34765,
+          "units": 211
+        },
+        {
+          "period": "2026-08-12",
+          "revenue": 41679,
+          "target": 34765,
+          "units": 226
+        }
+      ],
+      "30d": [
+        {
+          "period": "2026-07-14",
+          "revenue": 31355,
+          "target": 34765,
+          "units": 170
+        },
+        {
+          "period": "2026-07-15",
+          "revenue": 30907,
+          "target": 34765,
+          "units": 168
+        },
+        {
+          "period": "2026-07-16",
+          "revenue": 31444,
+          "target": 34765,
+          "units": 171
+        },
+        {
+          "period": "2026-07-17",
+          "revenue": 30668,
+          "target": 34765,
+          "units": 166
+        },
+        {
+          "period": "2026-07-18",
+          "revenue": 33414,
+          "target": 34765,
+          "units": 181
+        },
+        {
+          "period": "2026-07-19",
+          "revenue": 29868,
+          "target": 34765,
+          "units": 162
+        },
+        {
+          "period": "2026-07-20",
+          "revenue": 35214,
+          "target": 34765,
+          "units": 191
+        },
+        {
+          "period": "2026-07-21",
+          "revenue": 34794,
+          "target": 34765,
+          "units": 189
+        },
+        {
+          "period": "2026-07-22",
+          "revenue": 33579,
+          "target": 34765,
+          "units": 182
+        },
+        {
+          "period": "2026-07-23",
+          "revenue": 36506,
+          "target": 34765,
+          "units": 198
+        },
+        {
+          "period": "2026-07-24",
+          "revenue": 36405,
+          "target": 34765,
+          "units": 198
+        },
+        {
+          "period": "2026-07-25",
+          "revenue": 37113,
+          "target": 34765,
+          "units": 201
+        },
+        {
+          "period": "2026-07-26",
+          "revenue": 34616,
+          "target": 34765,
+          "units": 188
+        },
+        {
+          "period": "2026-07-27",
+          "revenue": 37995,
+          "target": 34765,
+          "units": 206
+        },
+        {
+          "period": "2026-07-28",
+          "revenue": 35936,
+          "target": 34765,
+          "units": 195
+        },
+        {
+          "period": "2026-07-29",
+          "revenue": 34227,
+          "target": 34765,
+          "units": 186
+        },
+        {
+          "period": "2026-07-30",
+          "revenue": 33766,
+          "target": 34765,
+          "units": 183
+        },
+        {
+          "period": "2026-07-31",
+          "revenue": 31783,
+          "target": 34765,
+          "units": 172
+        },
+        {
+          "period": "2026-08-01",
+          "revenue": 40037,
+          "target": 34765,
+          "units": 217
+        },
+        {
+          "period": "2026-08-02",
+          "revenue": 35227,
+          "target": 34765,
+          "units": 191
+        },
+        {
+          "period": "2026-08-03",
+          "revenue": 32706,
+          "target": 34765,
+          "units": 177
+        },
+        {
+          "period": "2026-08-04",
+          "revenue": 41099,
+          "target": 34765,
+          "units": 223
+        },
+        {
+          "period": "2026-08-05",
+          "revenue": 41475,
+          "target": 34765,
+          "units": 225
+        },
+        {
+          "period": "2026-08-06",
+          "revenue": 36981,
+          "target": 34765,
+          "units": 201
+        },
+        {
+          "period": "2026-08-07",
+          "revenue": 40049,
+          "target": 34765,
+          "units": 217
+        },
+        {
+          "period": "2026-08-08",
+          "revenue": 34556,
+          "target": 34765,
+          "units": 188
+        },
+        {
+          "period": "2026-08-09",
+          "revenue": 39600,
+          "target": 34765,
+          "units": 215
+        },
+        {
+          "period": "2026-08-10",
+          "revenue": 41092,
+          "target": 34765,
+          "units": 223
+        },
+        {
+          "period": "2026-08-11",
+          "revenue": 43341,
+          "target": 34765,
+          "units": 235
+        },
+        {
+          "period": "2026-08-12",
+          "revenue": 36837,
+          "target": 34765,
+          "units": 200
+        }
+      ],
+      "quarter": [
+        {
+          "period": "W1",
+          "revenue": 229162,
+          "target": 240682,
+          "units": 1244
+        },
+        {
+          "period": "W2",
+          "revenue": 225588,
+          "target": 240682,
+          "units": 1224
+        },
+        {
+          "period": "W3",
+          "revenue": 232218,
+          "target": 240682,
+          "units": 1260
+        },
+        {
+          "period": "W4",
+          "revenue": 218470,
+          "target": 240682,
+          "units": 1186
+        },
+        {
+          "period": "W5",
+          "revenue": 213075,
+          "target": 240682,
+          "units": 1156
+        },
+        {
+          "period": "W6",
+          "revenue": 219155,
+          "target": 240682,
+          "units": 1189
+        },
+        {
+          "period": "W7",
+          "revenue": 270022,
+          "target": 240682,
+          "units": 1465
+        },
+        {
+          "period": "W8",
+          "revenue": 243074,
+          "target": 240682,
+          "units": 1319
+        },
+        {
+          "period": "W9",
+          "revenue": 235451,
+          "target": 240682,
+          "units": 1278
+        },
+        {
+          "period": "W10",
+          "revenue": 291079,
+          "target": 240682,
+          "units": 1580
+        },
+        {
+          "period": "W11",
+          "revenue": 276446,
+          "target": 240682,
+          "units": 1500
+        },
+        {
+          "period": "W12",
+          "revenue": 279941,
+          "target": 240682,
+          "units": 1519
+        },
+        {
+          "period": "W13",
+          "revenue": 284094,
+          "target": 240682,
+          "units": 1542
+        }
+      ],
+      "ytd": [
+        {
+          "period": "Jan",
+          "revenue": 956529,
+          "target": 946481,
+          "units": 5191
+        },
+        {
+          "period": "Feb",
+          "revenue": 896494,
+          "target": 946481,
+          "units": 4865
+        },
+        {
+          "period": "Mar",
+          "revenue": 930277,
+          "target": 946481,
+          "units": 5048
+        },
+        {
+          "period": "Apr",
+          "revenue": 854908,
+          "target": 946481,
+          "units": 4639
+        },
+        {
+          "period": "May",
+          "revenue": 965876,
+          "target": 946481,
+          "units": 5241
+        },
+        {
+          "period": "Jun",
+          "revenue": 956811,
+          "target": 946481,
+          "units": 5192
+        },
+        {
+          "period": "Jul",
+          "revenue": 1041299,
+          "target": 946481,
+          "units": 5651
+        },
+        {
+          "period": "Aug",
+          "revenue": 1184820,
+          "target": 946481,
+          "units": 6429
+        }
+      ]
+    }
+  },
+  "products": [
+    {
+      "id": "BA-500",
+      "name": "Rumble 500 Bass Head",
+      "category": "Bass Amplifiers",
+      "sku": "BA-500",
+      "unitPrice": 549,
+      "status": "healthy",
+      "regions": {
+        "global": {
+          "revenue": 988200,
+          "unitsSold": 1800,
+          "salesTarget": 998182,
+          "salesVsTarget": 0.99,
+          "inventoryQty": 1400,
+          "dailySalesRate": 20,
+          "daysOfSupply": 70,
+          "returnRate": 0.021,
+          "repairRate": 0.011,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "northAmerica": {
+          "revenue": 446886,
+          "unitsSold": 814,
+          "salesTarget": 451400,
+          "salesVsTarget": 0.99,
+          "inventoryQty": 633,
+          "dailySalesRate": 9,
+          "daysOfSupply": 70,
+          "returnRate": 0.02,
+          "repairRate": 0.012,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "europe": {
+          "revenue": 311832,
+          "unitsSold": 568,
+          "salesTarget": 314982,
+          "salesVsTarget": 0.99,
+          "inventoryQty": 441,
+          "dailySalesRate": 6.3,
+          "daysOfSupply": 69.9,
+          "returnRate": 0.024,
+          "repairRate": 0.011,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "asiaPacific": {
+          "revenue": 229482,
+          "unitsSold": 418,
+          "salesTarget": 231800,
+          "salesVsTarget": 0.99,
+          "inventoryQty": 326,
+          "dailySalesRate": 4.6,
+          "daysOfSupply": 70.2,
+          "returnRate": 0.021,
+          "repairRate": 0.01,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        }
+      }
+    },
+    {
+      "id": "BA-800",
+      "name": "Rumble 800 Bass Combo",
+      "category": "Bass Amplifiers",
+      "sku": "BA-800",
+      "unitPrice": 799,
+      "status": "critical",
+      "regions": {
+        "global": {
+          "revenue": 958800,
+          "unitsSold": 1200,
+          "salesTarget": 773226,
+          "salesVsTarget": 1.24,
+          "inventoryQty": 65,
+          "dailySalesRate": 13.3,
+          "daysOfSupply": 4.9,
+          "returnRate": 0.019,
+          "repairRate": 0.014,
+          "revenueAtRisk": 267665,
+          "status": "critical"
+        },
+        "northAmerica": {
+          "revenue": 424269,
+          "unitsSold": 531,
+          "salesTarget": 342152,
+          "salesVsTarget": 1.24,
+          "inventoryQty": 29,
+          "dailySalesRate": 5.9,
+          "daysOfSupply": 4.9,
+          "returnRate": 0.019,
+          "repairRate": 0.015,
+          "revenueAtRisk": 118252,
+          "status": "critical"
+        },
+        "europe": {
+          "revenue": 339575,
+          "unitsSold": 425,
+          "salesTarget": 273851,
+          "salesVsTarget": 1.24,
+          "inventoryQty": 23,
+          "dailySalesRate": 4.7,
+          "daysOfSupply": 4.9,
+          "returnRate": 0.021,
+          "repairRate": 0.013,
+          "revenueAtRisk": 94815,
+          "status": "critical"
+        },
+        "asiaPacific": {
+          "revenue": 194956,
+          "unitsSold": 244,
+          "salesTarget": 157223,
+          "salesVsTarget": 1.24,
+          "inventoryQty": 13,
+          "dailySalesRate": 2.7,
+          "daysOfSupply": 4.8,
+          "returnRate": 0.018,
+          "repairRate": 0.016,
+          "revenueAtRisk": 54598,
+          "status": "critical"
+        }
+      }
+    },
+    {
+      "id": "BA-210",
+      "name": "Fathom 210 Bass Cabinet",
+      "category": "Bass Amplifiers",
+      "sku": "BA-210",
+      "unitPrice": 649,
+      "status": "underperforming",
+      "regions": {
+        "global": {
+          "revenue": 454300,
+          "unitsSold": 700,
+          "salesTarget": 582436,
+          "salesVsTarget": 0.78,
+          "inventoryQty": 620,
+          "dailySalesRate": 7.8,
+          "daysOfSupply": 79.7,
+          "returnRate": 0.024,
+          "repairRate": 0.017,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        },
+        "northAmerica": {
+          "revenue": 207680,
+          "unitsSold": 320,
+          "salesTarget": 266256,
+          "salesVsTarget": 0.78,
+          "inventoryQty": 284,
+          "dailySalesRate": 3.6,
+          "daysOfSupply": 79.9,
+          "returnRate": 0.026,
+          "repairRate": 0.019,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        },
+        "europe": {
+          "revenue": 125906,
+          "unitsSold": 194,
+          "salesTarget": 161418,
+          "salesVsTarget": 0.78,
+          "inventoryQty": 171,
+          "dailySalesRate": 2.2,
+          "daysOfSupply": 79.3,
+          "returnRate": 0.022,
+          "repairRate": 0.015,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        },
+        "asiaPacific": {
+          "revenue": 120714,
+          "unitsSold": 186,
+          "salesTarget": 154762,
+          "salesVsTarget": 0.78,
+          "inventoryQty": 165,
+          "dailySalesRate": 2.1,
+          "daysOfSupply": 79.8,
+          "returnRate": 0.025,
+          "repairRate": 0.017,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        }
+      }
+    },
+    {
+      "id": "SP-V12",
+      "name": "Vantage V12 PA Speaker",
+      "category": "Speakers",
+      "sku": "SP-V12",
+      "unitPrice": 899,
+      "status": "healthy",
+      "regions": {
+        "global": {
+          "revenue": 854050,
+          "unitsSold": 950,
+          "salesTarget": 829175,
+          "salesVsTarget": 1.03,
+          "inventoryQty": 720,
+          "dailySalesRate": 10.6,
+          "daysOfSupply": 68.2,
+          "returnRate": 0.028,
+          "repairRate": 0.019,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "northAmerica": {
+          "revenue": 379378,
+          "unitsSold": 422,
+          "salesTarget": 368328,
+          "salesVsTarget": 1.03,
+          "inventoryQty": 320,
+          "dailySalesRate": 4.7,
+          "daysOfSupply": 68.2,
+          "returnRate": 0.03,
+          "repairRate": 0.022,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "europe": {
+          "revenue": 275993,
+          "unitsSold": 307,
+          "salesTarget": 267954,
+          "salesVsTarget": 1.03,
+          "inventoryQty": 233,
+          "dailySalesRate": 3.4,
+          "daysOfSupply": 68.3,
+          "returnRate": 0.026,
+          "repairRate": 0.021,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "asiaPacific": {
+          "revenue": 198679,
+          "unitsSold": 221,
+          "salesTarget": 192892,
+          "salesVsTarget": 1.03,
+          "inventoryQty": 167,
+          "dailySalesRate": 2.5,
+          "daysOfSupply": 68,
+          "returnRate": 0.028,
+          "repairRate": 0.019,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        }
+      }
+    },
+    {
+      "id": "SP-V15",
+      "name": "Vantage V15 PA Speaker",
+      "category": "Speakers",
+      "sku": "SP-V15",
+      "unitPrice": 1199,
+      "status": "outperforming",
+      "regions": {
+        "global": {
+          "revenue": 743380,
+          "unitsSold": 620,
+          "salesTarget": 614364,
+          "salesVsTarget": 1.21,
+          "inventoryQty": 150,
+          "dailySalesRate": 6.9,
+          "daysOfSupply": 21.8,
+          "returnRate": 0.026,
+          "repairRate": 0.022,
+          "revenueAtRisk": 67943,
+          "status": "outperforming"
+        },
+        "northAmerica": {
+          "revenue": 321332,
+          "unitsSold": 268,
+          "salesTarget": 265564,
+          "salesVsTarget": 1.21,
+          "inventoryQty": 65,
+          "dailySalesRate": 3,
+          "daysOfSupply": 21.8,
+          "returnRate": 0.025,
+          "repairRate": 0.021,
+          "revenueAtRisk": 29176,
+          "status": "outperforming"
+        },
+        "europe": {
+          "revenue": 236203,
+          "unitsSold": 197,
+          "salesTarget": 195209,
+          "salesVsTarget": 1.21,
+          "inventoryQty": 48,
+          "dailySalesRate": 2.2,
+          "daysOfSupply": 21.9,
+          "returnRate": 0.03,
+          "repairRate": 0.025,
+          "revenueAtRisk": 21182,
+          "status": "outperforming"
+        },
+        "asiaPacific": {
+          "revenue": 185845,
+          "unitsSold": 155,
+          "salesTarget": 153591,
+          "salesVsTarget": 1.21,
+          "inventoryQty": 37,
+          "dailySalesRate": 1.7,
+          "daysOfSupply": 21.5,
+          "returnRate": 0.027,
+          "repairRate": 0.024,
+          "revenueAtRisk": 17585,
+          "status": "outperforming"
+        }
+      }
+    },
+    {
+      "id": "SP-H08",
+      "name": "Halo 8 Portable Speaker",
+      "category": "Speakers",
+      "sku": "SP-H08",
+      "unitPrice": 229,
+      "status": "critical",
+      "regions": {
+        "global": {
+          "revenue": 1236600,
+          "unitsSold": 5400,
+          "salesTarget": 1166604,
+          "salesVsTarget": 1.06,
+          "inventoryQty": 3200,
+          "dailySalesRate": 60,
+          "daysOfSupply": 53.3,
+          "returnRate": 0.092,
+          "repairRate": 0.024,
+          "revenueAtRisk": 76669,
+          "status": "critical"
+        },
+        "northAmerica": {
+          "revenue": 553035,
+          "unitsSold": 2415,
+          "salesTarget": 521731,
+          "salesVsTarget": 1.06,
+          "inventoryQty": 1431,
+          "dailySalesRate": 26.8,
+          "daysOfSupply": 53.3,
+          "returnRate": 0.103,
+          "repairRate": 0.021,
+          "revenueAtRisk": 40245,
+          "status": "critical"
+        },
+        "europe": {
+          "revenue": 366400,
+          "unitsSold": 1600,
+          "salesTarget": 345660,
+          "salesVsTarget": 1.06,
+          "inventoryQty": 948,
+          "dailySalesRate": 17.8,
+          "daysOfSupply": 53.3,
+          "returnRate": 0.092,
+          "repairRate": 0.022,
+          "revenueAtRisk": 22868,
+          "status": "critical"
+        },
+        "asiaPacific": {
+          "revenue": 317165,
+          "unitsSold": 1385,
+          "salesTarget": 299212,
+          "salesVsTarget": 1.06,
+          "inventoryQty": 821,
+          "dailySalesRate": 15.4,
+          "daysOfSupply": 53.4,
+          "returnRate": 0.1,
+          "repairRate": 0.023,
+          "revenueAtRisk": 22270,
+          "status": "critical"
+        }
+      }
+    },
+    {
+      "id": "SM-M5",
+      "name": "Precision M5 Studio Monitor",
+      "category": "Studio Monitors",
+      "sku": "SM-M5",
+      "unitPrice": 249,
+      "status": "healthy",
+      "regions": {
+        "global": {
+          "revenue": 796800,
+          "unitsSold": 3200,
+          "salesTarget": 788911,
+          "salesVsTarget": 1.01,
+          "inventoryQty": 2600,
+          "dailySalesRate": 35.6,
+          "daysOfSupply": 73.1,
+          "returnRate": 0.022,
+          "repairRate": 0.012,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "northAmerica": {
+          "revenue": 347355,
+          "unitsSold": 1395,
+          "salesTarget": 343916,
+          "salesVsTarget": 1.01,
+          "inventoryQty": 1134,
+          "dailySalesRate": 15.5,
+          "daysOfSupply": 73.2,
+          "returnRate": 0.021,
+          "repairRate": 0.011,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "europe": {
+          "revenue": 267924,
+          "unitsSold": 1076,
+          "salesTarget": 265271,
+          "salesVsTarget": 1.01,
+          "inventoryQty": 875,
+          "dailySalesRate": 12,
+          "daysOfSupply": 73.2,
+          "returnRate": 0.023,
+          "repairRate": 0.012,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "asiaPacific": {
+          "revenue": 181521,
+          "unitsSold": 729,
+          "salesTarget": 179724,
+          "salesVsTarget": 1.01,
+          "inventoryQty": 591,
+          "dailySalesRate": 8.1,
+          "daysOfSupply": 73,
+          "returnRate": 0.021,
+          "repairRate": 0.012,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        }
+      }
+    },
+    {
+      "id": "SM-M7",
+      "name": "Precision M7 Studio Monitor",
+      "category": "Studio Monitors",
+      "sku": "SM-M7",
+      "unitPrice": 379,
+      "status": "at_risk",
+      "regions": {
+        "global": {
+          "revenue": 795900,
+          "unitsSold": 2100,
+          "salesTarget": 730183,
+          "salesVsTarget": 1.09,
+          "inventoryQty": 270,
+          "dailySalesRate": 23.3,
+          "daysOfSupply": 11.6,
+          "returnRate": 0.023,
+          "repairRate": 0.013,
+          "revenueAtRisk": 162970,
+          "status": "at_risk"
+        },
+        "northAmerica": {
+          "revenue": 354744,
+          "unitsSold": 936,
+          "salesTarget": 325453,
+          "salesVsTarget": 1.09,
+          "inventoryQty": 120,
+          "dailySalesRate": 10.4,
+          "daysOfSupply": 11.5,
+          "returnRate": 0.023,
+          "repairRate": 0.014,
+          "revenueAtRisk": 72768,
+          "status": "at_risk"
+        },
+        "europe": {
+          "revenue": 300168,
+          "unitsSold": 792,
+          "salesTarget": 275383,
+          "salesVsTarget": 1.09,
+          "inventoryQty": 102,
+          "dailySalesRate": 8.8,
+          "daysOfSupply": 11.6,
+          "returnRate": 0.024,
+          "repairRate": 0.014,
+          "revenueAtRisk": 61398,
+          "status": "at_risk"
+        },
+        "asiaPacific": {
+          "revenue": 140988,
+          "unitsSold": 372,
+          "salesTarget": 129347,
+          "salesVsTarget": 1.09,
+          "inventoryQty": 48,
+          "dailySalesRate": 4.1,
+          "daysOfSupply": 11.6,
+          "returnRate": 0.023,
+          "repairRate": 0.013,
+          "revenueAtRisk": 28804,
+          "status": "at_risk"
+        }
+      }
+    },
+    {
+      "id": "SM-M8",
+      "name": "Precision M8 Studio Monitor",
+      "category": "Studio Monitors",
+      "sku": "SM-M8",
+      "unitPrice": 549,
+      "status": "healthy",
+      "regions": {
+        "global": {
+          "revenue": 768600,
+          "unitsSold": 1400,
+          "salesTarget": 792371,
+          "salesVsTarget": 0.97,
+          "inventoryQty": 1100,
+          "dailySalesRate": 15.6,
+          "daysOfSupply": 70.7,
+          "returnRate": 0.02,
+          "repairRate": 0.015,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "northAmerica": {
+          "revenue": 320067,
+          "unitsSold": 583,
+          "salesTarget": 329966,
+          "salesVsTarget": 0.97,
+          "inventoryQty": 458,
+          "dailySalesRate": 6.5,
+          "daysOfSupply": 70.7,
+          "returnRate": 0.022,
+          "repairRate": 0.014,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "europe": {
+          "revenue": 301401,
+          "unitsSold": 549,
+          "salesTarget": 310723,
+          "salesVsTarget": 0.97,
+          "inventoryQty": 431,
+          "dailySalesRate": 6.1,
+          "daysOfSupply": 70.7,
+          "returnRate": 0.021,
+          "repairRate": 0.015,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "asiaPacific": {
+          "revenue": 147132,
+          "unitsSold": 268,
+          "salesTarget": 151682,
+          "salesVsTarget": 0.97,
+          "inventoryQty": 211,
+          "dailySalesRate": 3,
+          "daysOfSupply": 70.9,
+          "returnRate": 0.018,
+          "repairRate": 0.016,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        }
+      }
+    },
+    {
+      "id": "SM-R1",
+      "name": "Reference One Monitor",
+      "category": "Studio Monitors",
+      "sku": "SM-R1",
+      "unitPrice": 949,
+      "status": "underperforming",
+      "regions": {
+        "global": {
+          "revenue": 455520,
+          "unitsSold": 480,
+          "salesTarget": 632667,
+          "salesVsTarget": 0.72,
+          "inventoryQty": 540,
+          "dailySalesRate": 5.3,
+          "daysOfSupply": 101.3,
+          "returnRate": 0.018,
+          "repairRate": 0.016,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        },
+        "northAmerica": {
+          "revenue": 171769,
+          "unitsSold": 181,
+          "salesTarget": 238568,
+          "salesVsTarget": 0.72,
+          "inventoryQty": 204,
+          "dailySalesRate": 2,
+          "daysOfSupply": 101.4,
+          "returnRate": 0.018,
+          "repairRate": 0.014,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        },
+        "europe": {
+          "revenue": 165126,
+          "unitsSold": 174,
+          "salesTarget": 229342,
+          "salesVsTarget": 0.72,
+          "inventoryQty": 196,
+          "dailySalesRate": 1.9,
+          "daysOfSupply": 101.4,
+          "returnRate": 0.017,
+          "repairRate": 0.016,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        },
+        "asiaPacific": {
+          "revenue": 118625,
+          "unitsSold": 125,
+          "salesTarget": 164757,
+          "salesVsTarget": 0.72,
+          "inventoryQty": 140,
+          "dailySalesRate": 1.4,
+          "daysOfSupply": 100.8,
+          "returnRate": 0.02,
+          "repairRate": 0.018,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        }
+      }
+    },
+    {
+      "id": "HP-X1",
+      "name": "Aura X1 Studio Headphones",
+      "category": "Headphones",
+      "sku": "HP-X1",
+      "unitPrice": 199,
+      "status": "healthy",
+      "regions": {
+        "global": {
+          "revenue": 1213900,
+          "unitsSold": 6100,
+          "salesTarget": 1190098,
+          "salesVsTarget": 1.02,
+          "inventoryQty": 4800,
+          "dailySalesRate": 67.8,
+          "daysOfSupply": 70.8,
+          "returnRate": 0.031,
+          "repairRate": 0.009,
+          "revenueAtRisk": 1214,
+          "status": "healthy"
+        },
+        "northAmerica": {
+          "revenue": 494913,
+          "unitsSold": 2487,
+          "salesTarget": 485209,
+          "salesVsTarget": 1.02,
+          "inventoryQty": 1957,
+          "dailySalesRate": 27.6,
+          "daysOfSupply": 70.8,
+          "returnRate": 0.034,
+          "repairRate": 0.009,
+          "revenueAtRisk": 2171,
+          "status": "healthy"
+        },
+        "europe": {
+          "revenue": 419691,
+          "unitsSold": 2109,
+          "salesTarget": 411462,
+          "salesVsTarget": 1.02,
+          "inventoryQty": 1660,
+          "dailySalesRate": 23.4,
+          "daysOfSupply": 70.8,
+          "returnRate": 0.027,
+          "repairRate": 0.01,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "asiaPacific": {
+          "revenue": 299296,
+          "unitsSold": 1504,
+          "salesTarget": 293427,
+          "salesVsTarget": 1.02,
+          "inventoryQty": 1183,
+          "dailySalesRate": 16.7,
+          "daysOfSupply": 70.8,
+          "returnRate": 0.028,
+          "repairRate": 0.008,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        }
+      }
+    },
+    {
+      "id": "HP-X3",
+      "name": "Aura X3 Wireless Headphones",
+      "category": "Headphones",
+      "sku": "HP-X3",
+      "unitPrice": 349,
+      "status": "critical",
+      "regions": {
+        "global": {
+          "revenue": 1465800,
+          "unitsSold": 4200,
+          "salesTarget": 1154173,
+          "salesVsTarget": 1.27,
+          "inventoryQty": 250,
+          "dailySalesRate": 46.7,
+          "daysOfSupply": 5.4,
+          "returnRate": 0.034,
+          "repairRate": 0.018,
+          "revenueAtRisk": 407213,
+          "status": "critical"
+        },
+        "northAmerica": {
+          "revenue": 634482,
+          "unitsSold": 1818,
+          "salesTarget": 499592,
+          "salesVsTarget": 1.27,
+          "inventoryQty": 108,
+          "dailySalesRate": 20.2,
+          "daysOfSupply": 5.3,
+          "returnRate": 0.034,
+          "repairRate": 0.02,
+          "revenueAtRisk": 176235,
+          "status": "critical"
+        },
+        "europe": {
+          "revenue": 502560,
+          "unitsSold": 1440,
+          "salesTarget": 395717,
+          "salesVsTarget": 1.27,
+          "inventoryQty": 86,
+          "dailySalesRate": 16,
+          "daysOfSupply": 5.4,
+          "returnRate": 0.032,
+          "repairRate": 0.017,
+          "revenueAtRisk": 138746,
+          "status": "critical"
+        },
+        "asiaPacific": {
+          "revenue": 328758,
+          "unitsSold": 942,
+          "salesTarget": 258865,
+          "salesVsTarget": 1.27,
+          "inventoryQty": 56,
+          "dailySalesRate": 10.5,
+          "daysOfSupply": 5.4,
+          "returnRate": 0.034,
+          "repairRate": 0.02,
+          "revenueAtRisk": 91452,
+          "status": "critical"
+        }
+      }
+    },
+    {
+      "id": "HP-C2",
+      "name": "Cadence C2 Monitoring Headphones",
+      "category": "Headphones",
+      "sku": "HP-C2",
+      "unitPrice": 159,
+      "status": "critical",
+      "regions": {
+        "global": {
+          "revenue": 604200,
+          "unitsSold": 3800,
+          "salesTarget": 616531,
+          "salesVsTarget": 0.98,
+          "inventoryQty": 3000,
+          "dailySalesRate": 42.2,
+          "daysOfSupply": 71.1,
+          "returnRate": 0.029,
+          "repairRate": 0.064,
+          "revenueAtRisk": 0,
+          "status": "critical"
+        },
+        "northAmerica": {
+          "revenue": 261555,
+          "unitsSold": 1645,
+          "salesTarget": 266893,
+          "salesVsTarget": 0.98,
+          "inventoryQty": 1299,
+          "dailySalesRate": 18.3,
+          "daysOfSupply": 71.1,
+          "returnRate": 0.031,
+          "repairRate": 0.067,
+          "revenueAtRisk": 361,
+          "status": "critical"
+        },
+        "europe": {
+          "revenue": 220215,
+          "unitsSold": 1385,
+          "salesTarget": 224709,
+          "salesVsTarget": 0.98,
+          "inventoryQty": 1093,
+          "dailySalesRate": 15.4,
+          "daysOfSupply": 71,
+          "returnRate": 0.028,
+          "repairRate": 0.055,
+          "revenueAtRisk": 0,
+          "status": "critical"
+        },
+        "asiaPacific": {
+          "revenue": 122430,
+          "unitsSold": 770,
+          "salesTarget": 124929,
+          "salesVsTarget": 0.98,
+          "inventoryQty": 608,
+          "dailySalesRate": 8.6,
+          "daysOfSupply": 71.1,
+          "returnRate": 0.029,
+          "repairRate": 0.067,
+          "revenueAtRisk": 0,
+          "status": "critical"
+        }
+      }
+    },
+    {
+      "id": "HP-P100",
+      "name": "Pulse P100 Earbuds",
+      "category": "Headphones",
+      "sku": "HP-P100",
+      "unitPrice": 149,
+      "status": "critical",
+      "regions": {
+        "global": {
+          "revenue": 1326100,
+          "unitsSold": 8900,
+          "salesTarget": 1275096,
+          "salesVsTarget": 1.04,
+          "inventoryQty": 6800,
+          "dailySalesRate": 98.9,
+          "daysOfSupply": 68.8,
+          "returnRate": 0.086,
+          "repairRate": 0.021,
+          "revenueAtRisk": 74262,
+          "status": "critical"
+        },
+        "northAmerica": {
+          "revenue": 553237,
+          "unitsSold": 3713,
+          "salesTarget": 531959,
+          "salesVsTarget": 1.04,
+          "inventoryQty": 2837,
+          "dailySalesRate": 41.3,
+          "daysOfSupply": 68.8,
+          "returnRate": 0.097,
+          "repairRate": 0.023,
+          "revenueAtRisk": 37271,
+          "status": "critical"
+        },
+        "europe": {
+          "revenue": 520606,
+          "unitsSold": 3494,
+          "salesTarget": 500583,
+          "salesVsTarget": 1.04,
+          "inventoryQty": 2670,
+          "dailySalesRate": 38.8,
+          "daysOfSupply": 68.8,
+          "returnRate": 0.075,
+          "repairRate": 0.019,
+          "revenueAtRisk": 23279,
+          "status": "healthy"
+        },
+        "asiaPacific": {
+          "revenue": 252257,
+          "unitsSold": 1693,
+          "salesTarget": 242555,
+          "salesVsTarget": 1.04,
+          "inventoryQty": 1293,
+          "dailySalesRate": 18.8,
+          "daysOfSupply": 68.7,
+          "returnRate": 0.096,
+          "repairRate": 0.023,
+          "revenueAtRisk": 16594,
+          "status": "critical"
+        }
+      }
+    },
+    {
+      "id": "AC-XLR",
+      "name": "ProLink XLR Cable",
+      "category": "Accessories",
+      "sku": "AC-XLR",
+      "unitPrice": 34,
+      "status": "healthy",
+      "regions": {
+        "global": {
+          "revenue": 482800,
+          "unitsSold": 14200,
+          "salesTarget": 482800,
+          "salesVsTarget": 1,
+          "inventoryQty": 12000,
+          "dailySalesRate": 157.8,
+          "daysOfSupply": 76.1,
+          "returnRate": 0.015,
+          "repairRate": 0.004,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "northAmerica": {
+          "revenue": 217804,
+          "unitsSold": 6406,
+          "salesTarget": 217804,
+          "salesVsTarget": 1,
+          "inventoryQty": 5413,
+          "dailySalesRate": 71.2,
+          "daysOfSupply": 76,
+          "returnRate": 0.015,
+          "repairRate": 0.004,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "europe": {
+          "revenue": 168674,
+          "unitsSold": 4961,
+          "salesTarget": 168674,
+          "salesVsTarget": 1,
+          "inventoryQty": 4192,
+          "dailySalesRate": 55.1,
+          "daysOfSupply": 76,
+          "returnRate": 0.014,
+          "repairRate": 0.004,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "asiaPacific": {
+          "revenue": 96322,
+          "unitsSold": 2833,
+          "salesTarget": 96322,
+          "salesVsTarget": 1,
+          "inventoryQty": 2395,
+          "dailySalesRate": 31.5,
+          "daysOfSupply": 76.1,
+          "returnRate": 0.017,
+          "repairRate": 0.004,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        }
+      }
+    },
+    {
+      "id": "AC-INS",
+      "name": "ProLink Instrument Cable",
+      "category": "Accessories",
+      "sku": "AC-INS",
+      "unitPrice": 29,
+      "status": "healthy",
+      "regions": {
+        "global": {
+          "revenue": 342200,
+          "unitsSold": 11800,
+          "salesTarget": 325905,
+          "salesVsTarget": 1.05,
+          "inventoryQty": 9500,
+          "dailySalesRate": 131.1,
+          "daysOfSupply": 72.5,
+          "returnRate": 0.016,
+          "repairRate": 0.005,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "northAmerica": {
+          "revenue": 152134,
+          "unitsSold": 5246,
+          "salesTarget": 144890,
+          "salesVsTarget": 1.05,
+          "inventoryQty": 4223,
+          "dailySalesRate": 58.3,
+          "daysOfSupply": 72.4,
+          "returnRate": 0.016,
+          "repairRate": 0.005,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "europe": {
+          "revenue": 100282,
+          "unitsSold": 3458,
+          "salesTarget": 95507,
+          "salesVsTarget": 1.05,
+          "inventoryQty": 2784,
+          "dailySalesRate": 38.4,
+          "daysOfSupply": 72.5,
+          "returnRate": 0.014,
+          "repairRate": 0.005,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "asiaPacific": {
+          "revenue": 89784,
+          "unitsSold": 3096,
+          "salesTarget": 85509,
+          "salesVsTarget": 1.05,
+          "inventoryQty": 2493,
+          "dailySalesRate": 34.4,
+          "daysOfSupply": 72.5,
+          "returnRate": 0.014,
+          "repairRate": 0.005,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        }
+      }
+    },
+    {
+      "id": "AC-STG",
+      "name": "StageGrip Speaker Stand",
+      "category": "Accessories",
+      "sku": "AC-STG",
+      "unitPrice": 129,
+      "status": "underperforming",
+      "regions": {
+        "global": {
+          "revenue": 335400,
+          "unitsSold": 2600,
+          "salesTarget": 414074,
+          "salesVsTarget": 0.81,
+          "inventoryQty": 3600,
+          "dailySalesRate": 28.9,
+          "daysOfSupply": 124.6,
+          "returnRate": 0.019,
+          "repairRate": 0.008,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        },
+        "northAmerica": {
+          "revenue": 155703,
+          "unitsSold": 1207,
+          "salesTarget": 192226,
+          "salesVsTarget": 0.81,
+          "inventoryQty": 1671,
+          "dailySalesRate": 13.4,
+          "daysOfSupply": 124.6,
+          "returnRate": 0.021,
+          "repairRate": 0.008,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        },
+        "europe": {
+          "revenue": 103845,
+          "unitsSold": 805,
+          "salesTarget": 128204,
+          "salesVsTarget": 0.81,
+          "inventoryQty": 1115,
+          "dailySalesRate": 8.9,
+          "daysOfSupply": 124.7,
+          "returnRate": 0.017,
+          "repairRate": 0.009,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        },
+        "asiaPacific": {
+          "revenue": 75852,
+          "unitsSold": 588,
+          "salesTarget": 93644,
+          "salesVsTarget": 0.81,
+          "inventoryQty": 814,
+          "dailySalesRate": 6.5,
+          "daysOfSupply": 124.6,
+          "returnRate": 0.02,
+          "repairRate": 0.007,
+          "revenueAtRisk": 0,
+          "status": "underperforming"
+        }
+      }
+    },
+    {
+      "id": "AC-FOA",
+      "name": "SoundShield Foam Kit",
+      "category": "Accessories",
+      "sku": "AC-FOA",
+      "unitPrice": 89,
+      "status": "healthy",
+      "regions": {
+        "global": {
+          "revenue": 169100,
+          "unitsSold": 1900,
+          "salesTarget": 169100,
+          "salesVsTarget": 1,
+          "inventoryQty": 1500,
+          "dailySalesRate": 21.1,
+          "daysOfSupply": 71.1,
+          "returnRate": 0.017,
+          "repairRate": 0.006,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "northAmerica": {
+          "revenue": 85084,
+          "unitsSold": 956,
+          "salesTarget": 85084,
+          "salesVsTarget": 1,
+          "inventoryQty": 755,
+          "dailySalesRate": 10.6,
+          "daysOfSupply": 71.1,
+          "returnRate": 0.015,
+          "repairRate": 0.005,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "europe": {
+          "revenue": 47882,
+          "unitsSold": 538,
+          "salesTarget": 47882,
+          "salesVsTarget": 1,
+          "inventoryQty": 425,
+          "dailySalesRate": 6,
+          "daysOfSupply": 71.1,
+          "returnRate": 0.015,
+          "repairRate": 0.006,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "asiaPacific": {
+          "revenue": 36134,
+          "unitsSold": 406,
+          "salesTarget": 36134,
+          "salesVsTarget": 1,
+          "inventoryQty": 320,
+          "dailySalesRate": 4.5,
+          "daysOfSupply": 70.9,
+          "returnRate": 0.015,
+          "repairRate": 0.005,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        }
+      }
+    },
+    {
+      "id": "AC-PWR",
+      "name": "PowerCore Amp Power Supply",
+      "category": "Accessories",
+      "sku": "AC-PWR",
+      "unitPrice": 99,
+      "status": "critical",
+      "regions": {
+        "global": {
+          "revenue": 148500,
+          "unitsSold": 1500,
+          "salesTarget": 154688,
+          "salesVsTarget": 0.96,
+          "inventoryQty": 1200,
+          "dailySalesRate": 16.7,
+          "daysOfSupply": 72,
+          "returnRate": 0.022,
+          "repairRate": 0.058,
+          "revenueAtRisk": 0,
+          "status": "critical"
+        },
+        "northAmerica": {
+          "revenue": 61776,
+          "unitsSold": 624,
+          "salesTarget": 64350,
+          "salesVsTarget": 0.96,
+          "inventoryQty": 499,
+          "dailySalesRate": 6.9,
+          "daysOfSupply": 72,
+          "returnRate": 0.021,
+          "repairRate": 0.059,
+          "revenueAtRisk": 0,
+          "status": "critical"
+        },
+        "europe": {
+          "revenue": 49896,
+          "unitsSold": 504,
+          "salesTarget": 51975,
+          "salesVsTarget": 0.96,
+          "inventoryQty": 403,
+          "dailySalesRate": 5.6,
+          "daysOfSupply": 72,
+          "returnRate": 0.02,
+          "repairRate": 0.053,
+          "revenueAtRisk": 0,
+          "status": "critical"
+        },
+        "asiaPacific": {
+          "revenue": 36828,
+          "unitsSold": 372,
+          "salesTarget": 38363,
+          "salesVsTarget": 0.96,
+          "inventoryQty": 298,
+          "dailySalesRate": 4.1,
+          "daysOfSupply": 72.1,
+          "returnRate": 0.021,
+          "repairRate": 0.059,
+          "revenueAtRisk": 0,
+          "status": "critical"
+        }
+      }
+    },
+    {
+      "id": "AC-ISO",
+      "name": "FlexMount Isolation Pads",
+      "category": "Accessories",
+      "sku": "AC-ISO",
+      "unitPrice": 39,
+      "status": "healthy",
+      "regions": {
+        "global": {
+          "revenue": 167700,
+          "unitsSold": 4300,
+          "salesTarget": 164412,
+          "salesVsTarget": 1.02,
+          "inventoryQty": 3400,
+          "dailySalesRate": 47.8,
+          "daysOfSupply": 71.2,
+          "returnRate": 0.018,
+          "repairRate": 0.005,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "northAmerica": {
+          "revenue": 71175,
+          "unitsSold": 1825,
+          "salesTarget": 69779,
+          "salesVsTarget": 1.02,
+          "inventoryQty": 1443,
+          "dailySalesRate": 20.3,
+          "daysOfSupply": 71.2,
+          "returnRate": 0.017,
+          "repairRate": 0.005,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "europe": {
+          "revenue": 51519,
+          "unitsSold": 1321,
+          "salesTarget": 50509,
+          "salesVsTarget": 1.02,
+          "inventoryQty": 1045,
+          "dailySalesRate": 14.7,
+          "daysOfSupply": 71.2,
+          "returnRate": 0.019,
+          "repairRate": 0.004,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        },
+        "asiaPacific": {
+          "revenue": 45006,
+          "unitsSold": 1154,
+          "salesTarget": 44124,
+          "salesVsTarget": 1.02,
+          "inventoryQty": 912,
+          "dailySalesRate": 12.8,
+          "daysOfSupply": 71.1,
+          "returnRate": 0.018,
+          "repairRate": 0.004,
+          "revenueAtRisk": 0,
+          "status": "healthy"
+        }
+      }
+    }
+  ]
+}
