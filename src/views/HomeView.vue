@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
+import { useTheme } from 'vuetify'
 import { Line } from 'vue-chartjs'
 import {
   Chart as ChartJS,
@@ -30,6 +31,20 @@ type RangeKey = '7d' | '30d' | 'quarter' | 'ytd'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const data = metricsData as any
+
+// ---- theme ----------------------------------------------------------------
+const theme = useTheme()
+const isDark = computed(() => theme.current.value.dark)
+function toggleTheme() {
+  theme.change(isDark.value ? 'operationsLight' : 'operationsDark')
+}
+// keep the page (overscroll) background in sync with the active theme
+watchEffect(() => {
+  document.body.style.backgroundColor = isDark.value ? '#0d0f14' : '#f4f5f8'
+})
+const barBg = computed(() =>
+  isDark.value ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.08)',
+)
 
 // ---- filters --------------------------------------------------------------
 const selectedRegion = ref<RegionKey>('global')
@@ -343,58 +358,70 @@ const chartData = computed(() => ({
   ],
 }))
 
-const chartOptions = computed(() => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  interaction: { mode: 'index' as const, intersect: false },
-  plugins: {
-    legend: {
-      display: true,
-      position: 'top' as const,
-      align: 'end' as const,
-      labels: {
-        color: '#9aa4b2',
-        boxWidth: 14,
-        boxHeight: 3,
-        usePointStyle: false,
-        padding: 16,
+const chartOptions = computed(() => {
+  const dark = isDark.value
+  const gridColor = dark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.06)'
+  const gridColorX = dark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.05)'
+  const borderColor = dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.1)'
+  const tickColor = dark ? '#6b7480' : '#6b7480'
+  const legendColor = dark ? '#9aa4b2' : '#5a6473'
+  const tooltipBg = dark ? '#1d222c' : '#ffffff'
+  const tooltipBorder = dark ? '#2e3440' : '#e2e5ea'
+  const tooltipTitle = dark ? '#e6e8ee' : '#1a1d24'
+  const tooltipBody = dark ? '#c3c9d4' : '#4a5160'
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index' as const, intersect: false },
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top' as const,
+        align: 'end' as const,
+        labels: {
+          color: legendColor,
+          boxWidth: 14,
+          boxHeight: 3,
+          usePointStyle: false,
+          padding: 16,
+        },
+      },
+      tooltip: {
+        backgroundColor: tooltipBg,
+        borderColor: tooltipBorder,
+        borderWidth: 1,
+        titleColor: tooltipTitle,
+        bodyColor: tooltipBody,
+        padding: 12,
+        callbacks: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          label: (ctx: any) => `${ctx.dataset.label}: ${usd0.format(ctx.parsed.y)}`,
+        },
       },
     },
-    tooltip: {
-      backgroundColor: '#1d222c',
-      borderColor: '#2e3440',
-      borderWidth: 1,
-      titleColor: '#e6e8ee',
-      bodyColor: '#c3c9d4',
-      padding: 12,
-      callbacks: {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        label: (ctx: any) => `${ctx.dataset.label}: ${usd0.format(ctx.parsed.y)}`,
+    scales: {
+      x: {
+        grid: { color: gridColorX },
+        border: { color: borderColor },
+        ticks: {
+          color: tickColor,
+          maxRotation: 0,
+          autoSkip: true,
+          maxTicksLimit: 8,
+        },
+      },
+      y: {
+        grid: { color: gridColor },
+        border: { display: false },
+        ticks: {
+          color: tickColor,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          callback: (v: any) => usdCompact.format(v),
+        },
       },
     },
-  },
-  scales: {
-    x: {
-      grid: { color: 'rgba(255,255,255,0.04)' },
-      border: { color: 'rgba(255,255,255,0.08)' },
-      ticks: {
-        color: '#6b7480',
-        maxRotation: 0,
-        autoSkip: true,
-        maxTicksLimit: 8,
-      },
-    },
-    y: {
-      grid: { color: 'rgba(255,255,255,0.05)' },
-      border: { display: false },
-      ticks: {
-        color: '#6b7480',
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        callback: (v: any) => usdCompact.format(v),
-      },
-    },
-  },
-}))
+  }
+})
 
 const currentRegionLabel = computed(
   () => regionOptions.find((r) => r.key === selectedRegion.value)?.label ?? '',
@@ -448,6 +475,19 @@ const currentRangeLabel = computed(
             prepend-inner-icon="mdi-earth"
             class="region-select"
           />
+
+          <v-btn
+            :icon="isDark ? 'mdi-weather-night' : 'mdi-weather-sunny'"
+            variant="tonal"
+            density="comfortable"
+            :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+            @click="toggleTheme"
+          >
+            <v-icon :icon="isDark ? 'mdi-weather-night' : 'mdi-weather-sunny'" />
+            <v-tooltip activator="parent" location="bottom">
+              {{ isDark ? 'Switch to light mode' : 'Switch to dark mode' }}
+            </v-tooltip>
+          </v-btn>
         </div>
       </div>
     </header>
@@ -503,7 +543,7 @@ const currentRangeLabel = computed(
                 v-if="card.attainment != null"
                 :model-value="Math.min(card.attainment, 100)"
                 :color="card.attainment >= 100 ? 'success' : 'primary'"
-                bg-color="rgba(255,255,255,0.06)"
+                :bg-color="barBg"
                 height="4"
                 rounded
                 class="kpi-card__bar"
@@ -700,9 +740,9 @@ const currentRangeLabel = computed(
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(13, 15, 20, 0.85);
+  background: rgba(var(--v-theme-background), 0.82);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(var(--v-theme-on-surface), 0.08);
   margin: 0 -24px 24px;
   padding: 0 24px;
 }
@@ -723,13 +763,13 @@ const currentRangeLabel = computed(
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
-  color: #f3f5f9;
+  color: rgb(var(--v-theme-on-surface));
   margin: 0;
   letter-spacing: -0.2px;
 }
 .dash-subtitle {
   font-size: 12.5px;
-  color: #7d8593;
+  color: rgba(var(--v-theme-on-surface), 0.55);
   margin: 2px 0 0;
 }
 .dash-header__filters {
@@ -754,7 +794,7 @@ const currentRangeLabel = computed(
   margin-bottom: 16px;
 }
 .context-line strong {
-  color: #e6e8ee;
+  color: rgb(var(--v-theme-on-surface));
   font-weight: 600;
 }
 
@@ -773,13 +813,13 @@ const currentRangeLabel = computed(
   font-weight: 500;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  color: #8b93a1;
+  color: rgba(var(--v-theme-on-surface), 0.6);
 }
 .kpi-card__value {
   font-size: 32px;
   font-weight: 650;
   line-height: 1.1;
-  color: #f3f5f9;
+  color: rgb(var(--v-theme-on-surface));
   margin: 12px 0 8px;
   letter-spacing: -0.5px;
 }
@@ -797,14 +837,14 @@ const currentRangeLabel = computed(
   font-weight: 600;
 }
 .delta-up {
-  color: #3ecf8e;
+  color: rgb(var(--v-theme-success));
 }
 .delta-down {
-  color: #f97066;
+  color: rgb(var(--v-theme-error));
 }
 .kpi-card__footnote {
   font-size: 12px;
-  color: #7d8593;
+  color: rgba(var(--v-theme-on-surface), 0.55);
 }
 .kpi-card__bar {
   margin-top: 14px;
@@ -822,7 +862,7 @@ const currentRangeLabel = computed(
 .section-head__title {
   display: flex;
   align-items: center;
-  color: #e6e8ee;
+  color: rgb(var(--v-theme-on-surface));
 }
 .section-head h2 {
   font-size: 17px;
@@ -874,23 +914,23 @@ const currentRangeLabel = computed(
 .alert-card__title {
   font-size: 14.5px;
   font-weight: 600;
-  color: #f3f5f9;
+  color: rgb(var(--v-theme-on-surface));
   line-height: 1.3;
 }
 .alert-card__category {
   font-size: 11.5px;
-  color: #7d8593;
+  color: rgba(var(--v-theme-on-surface), 0.55);
   margin-top: 2px;
 }
 .alert-card__what {
   font-size: 13px;
-  color: #c3c9d4;
+  color: rgba(var(--v-theme-on-surface), 0.82);
   margin: 0 0 6px;
   line-height: 1.45;
 }
 .alert-card__why {
   font-size: 12.5px;
-  color: #8b93a1;
+  color: rgba(var(--v-theme-on-surface), 0.62);
   margin: 0 0 12px;
   line-height: 1.45;
 }
@@ -902,8 +942,8 @@ const currentRangeLabel = computed(
 .alert-tag {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(var(--v-theme-on-surface), 0.04);
+  border: 1px solid rgba(var(--v-theme-on-surface), 0.08);
   border-radius: 8px;
   padding: 6px 12px;
 }
@@ -911,12 +951,12 @@ const currentRangeLabel = computed(
   font-size: 10.5px;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  color: #7d8593;
+  color: rgba(var(--v-theme-on-surface), 0.55);
 }
 .alert-tag__value {
   font-size: 14px;
   font-weight: 600;
-  color: #e6e8ee;
+  color: rgb(var(--v-theme-on-surface));
 }
 
 /* Chart */
@@ -929,7 +969,7 @@ const currentRangeLabel = computed(
   font-size: 11.5px !important;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  color: #8b93a1 !important;
+  color: rgba(var(--v-theme-on-surface), 0.6) !important;
   font-weight: 600 !important;
 }
 .product-table :deep(td) {

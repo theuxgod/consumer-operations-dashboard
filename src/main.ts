@@ -26,6 +26,24 @@ const operationsDark = {
   },
 }
 
+const operationsLight = {
+  dark: false,
+  colors: {
+    background: '#f4f5f8',
+    surface: '#ffffff',
+    'surface-bright': '#ffffff',
+    'surface-light': '#eef0f4',
+    primary: '#2f6fed',
+    secondary: '#0e9bb0',
+    error: '#d92d20',
+    warning: '#dc6803',
+    success: '#079455',
+    info: '#2f6fed',
+    'on-background': '#1a1d24',
+    'on-surface': '#1a1d24',
+  },
+}
+
 const vuetify = createVuetify({
   components,
   directives,
@@ -36,6 +54,7 @@ const vuetify = createVuetify({
     defaultTheme: 'operationsDark',
     themes: {
       operationsDark,
+      operationsLight,
     },
   },
   defaults: {
