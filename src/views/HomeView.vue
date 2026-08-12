@@ -341,13 +341,19 @@ const hiddenWarningCount = computed(() =>
   Math.max(0, warningAlerts.value.length - WARNING_PREVIEW),
 )
 
-// ---- status chips ---------------------------------------------------------
-const statusMeta: Record<string, { label: string; color: string }> = {
-  critical: { label: 'Critical', color: 'error' },
-  at_risk: { label: 'At risk', color: 'warning' },
-  underperforming: { label: 'Underperforming', color: 'grey' },
-  outperforming: { label: 'Outperforming', color: 'success' },
-  healthy: { label: 'Healthy', color: 'success' },
+// ---- operational health — derived purely from inventory/quality signals --
+type HealthKey = 'critical' | 'at_risk' | 'watch' | 'healthy'
+const healthMeta: Record<HealthKey, { label: string; color: string; variant: string }> = {
+  critical: { label: 'Critical', color: 'error',   variant: 'flat' },
+  at_risk:  { label: 'At Risk',  color: 'warning', variant: 'tonal' },
+  watch:    { label: 'Watch',    color: 'warning', variant: 'outlined' },
+  healthy:  { label: 'Healthy',  color: 'success', variant: 'tonal' },
+}
+function opHealth(p: ProductRow): HealthKey {
+  if (p.daysOfSupply < 7  || p.returnRate  > 0.08) return 'critical'
+  if (p.daysOfSupply < 14 || p.repairRate  > 0.05) return 'at_risk'
+  if (p.salesVsTarget > 1.18 && p.daysOfSupply < 30) return 'watch'
+  return 'healthy'
 }
 
 // ---- product table --------------------------------------------------------
@@ -360,7 +366,7 @@ const headers = [
   { title: 'Inventory', key: 'inventoryQty', align: 'end' as const },
   { title: 'Days Supply', key: 'daysOfSupply', align: 'end' as const },
   { title: 'Return Rate', key: 'returnRate', align: 'end' as const },
-  { title: 'Status', key: 'status', align: 'start' as const },
+  { title: 'Operational Health', key: 'status', align: 'start' as const },
 ]
 
 const daysColor = (d: number) =>
@@ -862,12 +868,12 @@ const currentRangeLabel = computed(
             </template>
             <template #[`item.status`]="{ item }: { item: ProductRow }">
               <v-chip
-                :color="statusMeta[item.status]?.color ?? 'grey'"
+                :color="healthMeta[opHealth(item)].color"
+                :variant="healthMeta[opHealth(item)].variant as 'flat' | 'tonal' | 'outlined'"
                 size="small"
-                variant="tonal"
                 label
               >
-                {{ statusMeta[item.status]?.label ?? item.status }}
+                {{ healthMeta[opHealth(item)].label }}
               </v-chip>
             </template>
           </v-data-table>
