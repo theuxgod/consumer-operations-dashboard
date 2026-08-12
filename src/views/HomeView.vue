@@ -492,49 +492,59 @@ const currentRangeLabel = computed(
         </div>
 
         <div class="dash-header__filters">
-          <v-btn-toggle
-            v-model="selectedRange"
-            mandatory
-            density="comfortable"
-            variant="outlined"
-            divided
-            color="primary"
-            class="range-toggle"
-          >
-            <v-btn
-              v-for="r in rangeOptions"
-              :key="r.key"
-              :value="r.key"
-              size="small"
+          <div class="ctrl-group" role="group" aria-label="Dashboard filters">
+            <!-- Period -->
+            <v-select
+              v-model="selectedRange"
+              :items="rangeOptions"
+              item-title="label"
+              item-value="key"
+              variant="plain"
+              density="compact"
+              hide-details
+              single-line
+              class="ctrl-select ctrl-period"
             >
-              {{ r.label }}
+              <template #prepend-inner>
+                <span class="ctrl-field-label">Period</span>
+              </template>
+            </v-select>
+
+            <span class="ctrl-sep" aria-hidden="true" />
+
+            <!-- Region -->
+            <v-select
+              v-model="selectedRegion"
+              :items="regionOptions"
+              item-title="label"
+              item-value="key"
+              variant="plain"
+              density="compact"
+              hide-details
+              single-line
+              class="ctrl-select ctrl-region"
+            >
+              <template #prepend-inner>
+                <v-icon size="13" class="ctrl-prepend-icon">mdi-earth</v-icon>
+              </template>
+            </v-select>
+
+            <span class="ctrl-sep" aria-hidden="true" />
+
+            <!-- Theme toggle -->
+            <v-btn
+              class="ctrl-theme-btn"
+              variant="text"
+              rounded="0"
+              :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+              @click="toggleTheme"
+            >
+              <v-icon :icon="isDark ? 'mdi-weather-sunny' : 'mdi-weather-night'" size="16" />
+              <v-tooltip activator="parent" location="bottom">
+                {{ isDark ? 'Switch to light mode' : 'Switch to dark mode' }}
+              </v-tooltip>
             </v-btn>
-          </v-btn-toggle>
-
-          <v-select
-            v-model="selectedRegion"
-            :items="regionOptions"
-            item-title="label"
-            item-value="key"
-            variant="outlined"
-            density="comfortable"
-            hide-details
-            prepend-inner-icon="mdi-earth"
-            class="region-select"
-          />
-
-          <v-btn
-            :icon="isDark ? 'mdi-weather-night' : 'mdi-weather-sunny'"
-            variant="tonal"
-            density="comfortable"
-            :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
-            @click="toggleTheme"
-          >
-            <v-icon :icon="isDark ? 'mdi-weather-night' : 'mdi-weather-sunny'" />
-            <v-tooltip activator="parent" location="bottom">
-              {{ isDark ? 'Switch to light mode' : 'Switch to dark mode' }}
-            </v-tooltip>
-          </v-btn>
+          </div>
         </div>
       </div>
     </header>
@@ -930,14 +940,88 @@ const currentRangeLabel = computed(
 .dash-header__filters {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
 }
-.range-toggle {
-  height: 40px;
+
+/* Unified filter control group */
+.ctrl-group {
+  display: flex;
+  align-items: stretch;
+  height: 38px;
+  border: 1px solid rgba(var(--v-theme-on-surface), 0.11);
+  border-radius: 8px;
+  background: rgba(var(--v-theme-on-surface), 0.04);
+  overflow: hidden;
 }
-.region-select {
+.ctrl-sep {
+  width: 1px;
+  background: rgba(var(--v-theme-on-surface), 0.1);
+  flex: none;
+  margin: 7px 0;
+}
+.ctrl-select {
+  flex: none;
+}
+.ctrl-period {
   min-width: 190px;
+}
+.ctrl-region {
+  min-width: 138px;
+}
+.ctrl-field-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(var(--v-theme-on-surface), 0.38);
+  white-space: nowrap;
+  padding-right: 8px;
+  border-right: 1px solid rgba(var(--v-theme-on-surface), 0.1);
+  margin-right: 2px;
+  line-height: 1;
+}
+.ctrl-prepend-icon {
+  opacity: 0.45;
+  margin-right: 2px;
+}
+.ctrl-theme-btn {
+  width: 38px !important;
+  min-width: 38px !important;
+  height: 100% !important;
+  opacity: 0.65;
+  transition: opacity 0.15s;
+}
+.ctrl-theme-btn:hover {
+  opacity: 1;
+}
+
+/* Vuetify field internals — force consistent sizing inside ctrl-group */
+.ctrl-group :deep(.v-field) {
+  height: 38px;
+  --v-field-padding-top: 0;
+  --v-field-padding-bottom: 0;
+}
+.ctrl-group :deep(.v-input__control) {
+  height: 100%;
+}
+.ctrl-group :deep(.v-field__input) {
+  font-size: 13px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: unset !important;
+  height: 38px;
+  display: flex;
+  align-items: center;
+}
+.ctrl-group :deep(.v-field__prepend-inner) {
+  padding-top: 0 !important;
+  padding-inline-start: 10px;
+  align-items: center;
+  align-self: center;
+}
+.ctrl-group :deep(.v-field__append-inner) {
+  padding-top: 0 !important;
+  align-self: center;
+  padding-inline-end: 4px;
 }
 
 /* Section rhythm — deliberate inter-layer spacing */
@@ -982,6 +1066,7 @@ const currentRangeLabel = computed(
 }
 .section-head__context .sep {
   color: rgba(var(--v-theme-on-surface), 0.25);
+  margin: 0 5px;
 }
 
 /* KPI cards */
