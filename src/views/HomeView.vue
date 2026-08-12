@@ -127,7 +127,6 @@ const kpiCards = computed(() => {
       deltaGood: k.revenue.deltaPct >= 0,
       footnote: `${k.revenue.targetAttainmentPct}% of ${usdCompact.format(k.revenue.target)} target`,
       attainment: k.revenue.targetAttainmentPct,
-      accent: 'primary',
     },
     {
       key: 'units',
@@ -138,7 +137,6 @@ const kpiCards = computed(() => {
       deltaGood: k.unitsSold.deltaPct >= 0,
       footnote: 'vs previous period',
       attainment: null,
-      accent: 'secondary',
     },
     {
       key: 'inventoryRisk',
@@ -149,7 +147,6 @@ const kpiCards = computed(() => {
       deltaGood: k.inventoryRisk.direction !== 'up',
       footnote: 'products at risk of stockout',
       attainment: null,
-      accent: 'warning',
     },
     {
       key: 'revenueAtRisk',
@@ -160,7 +157,6 @@ const kpiCards = computed(() => {
       deltaGood: k.revenueAtRisk.direction !== 'up',
       footnote: 'exposed to inventory & returns',
       attainment: null,
-      accent: 'error',
     },
   ]
 })
@@ -631,7 +627,6 @@ const chartPlugins = computed(() => {
                 <span class="kpi-card__label">{{ card.label }}</span>
                 <v-icon
                   :icon="card.icon"
-                  :color="card.accent"
                   size="20"
                   class="kpi-card__icon"
                 />
@@ -1225,6 +1220,9 @@ const chartPlugins = computed(() => {
 .kpi-card__footnote {
   font-size: 12px;
   color: rgba(var(--v-theme-on-surface), 0.55);
+}
+.kpi-card__icon {
+  color: rgba(var(--v-theme-on-surface), 0.3);
 }
 .kpi-card__bar {
   margin-top: 14px;
