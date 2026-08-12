@@ -304,7 +304,7 @@ const headers = [
   { title: 'Inventory', key: 'inventoryQty', align: 'end' as const },
   { title: 'Days Supply', key: 'daysOfSupply', align: 'end' as const },
   { title: 'Return Rate', key: 'returnRate', align: 'end' as const },
-  { title: 'Status', key: 'status', align: 'center' as const },
+  { title: 'Status', key: 'status', align: 'start' as const },
 ]
 
 const daysColor = (d: number) =>
