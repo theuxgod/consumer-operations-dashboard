@@ -515,20 +515,23 @@ const currentRangeLabel = computed(
     </header>
 
     <main class="dash-body">
-      <!-- Context line -->
-      <div class="context-line">
-        <span class="text-medium-emphasis">Showing</span>
-        <strong>{{ currentRegionLabel }}</strong>
-        <span class="text-medium-emphasis">·</span>
-        <strong>{{ currentRangeLabel }}</strong>
-        <v-spacer />
-        <span class="text-medium-emphasis text-caption">
-          {{ data.meta.periodLabel }} · updated {{ data.meta.generatedAt }}
-        </span>
-      </div>
-
-      <!-- Key metrics -->
-      <section aria-label="Key metrics">
+      <!-- Business Health -->
+      <section aria-label="Business health" class="dash-section dash-section--first">
+        <div class="section-head">
+          <div class="section-head__title">
+            <div>
+              <span class="section-eyebrow">Status</span>
+              <h2>Business Health</h2>
+            </div>
+          </div>
+          <p class="section-head__context">
+            <strong>{{ currentRegionLabel }}</strong>
+            <span class="sep">·</span>
+            <strong>{{ currentRangeLabel }}</strong>
+            <span class="sep">·</span>
+            {{ data.meta.periodLabel }}
+          </p>
+        </div>
         <v-row dense>
           <v-col v-for="card in kpiCards" :key="card.key" cols="12" sm="6" lg="3">
             <v-card class="kpi-card" rounded="lg" border>
@@ -576,11 +579,13 @@ const currentRangeLabel = computed(
       </section>
 
       <!-- Needs Attention -->
-      <section aria-label="Needs attention" class="mt-8">
-        <div class="section-head">
+      <section aria-label="Needs attention" class="dash-section">
+        <div class="section-head section-head--attention">
           <div class="section-head__title">
-            <v-icon icon="mdi-bell-ring-outline" size="22" class="mr-2" />
-            <h2>Needs Attention</h2>
+            <div>
+              <span class="section-eyebrow section-eyebrow--attention">Action Required</span>
+              <h2>Needs Attention</h2>
+            </div>
           </div>
           <div class="section-head__meta">
             <v-chip
@@ -765,11 +770,13 @@ const currentRangeLabel = computed(
       </section>
 
       <!-- Performance trend -->
-      <section aria-label="Sales performance" class="mt-8">
+      <section aria-label="Sales performance" class="dash-section">
         <div class="section-head">
           <div class="section-head__title">
-            <v-icon icon="mdi-chart-line" size="22" class="mr-2" />
-            <h2>Sales Performance</h2>
+            <div>
+              <span class="section-eyebrow">Trend Analysis</span>
+              <h2>Sales Performance</h2>
+            </div>
           </div>
           <span class="text-medium-emphasis text-caption">
             Revenue vs. target · {{ currentRegionLabel }}
@@ -783,11 +790,13 @@ const currentRangeLabel = computed(
       </section>
 
       <!-- Product performance -->
-      <section aria-label="Product performance" class="mt-8 mb-6">
+      <section aria-label="Product performance" class="dash-section mb-8">
         <div class="section-head">
           <div class="section-head__title">
-            <v-icon icon="mdi-table-large" size="22" class="mr-2" />
-            <h2>Product Performance</h2>
+            <div>
+              <span class="section-eyebrow">Product Detail</span>
+              <h2>Product Performance</h2>
+            </div>
           </div>
           <span class="text-medium-emphasis text-caption">
             {{ products.length }} products · {{ currentRegionLabel }}
@@ -906,17 +915,48 @@ const currentRangeLabel = computed(
   min-width: 190px;
 }
 
-/* Context line */
-.context-line {
+/* Section rhythm — deliberate inter-layer spacing */
+.dash-section {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(var(--v-theme-on-surface), 0.07);
+}
+.dash-section--first {
+  margin-top: 0;
+  padding-top: 20px;
+  border-top: none;
+}
+
+/* Section eyebrow — small uppercase label above each h2 */
+.section-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(var(--v-theme-on-surface), 0.35);
+  margin-bottom: 7px;
+}
+.section-eyebrow--attention {
+  color: rgba(var(--v-theme-error), 0.75);
+  letter-spacing: 1.2px;
+}
+
+/* Context string in Business Health section head */
+.section-head__context {
+  font-size: 13px;
+  color: rgba(var(--v-theme-on-surface), 0.5);
+  margin: 0;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13.5px;
-  margin-bottom: 16px;
+  gap: 6px;
 }
-.context-line strong {
-  color: rgb(var(--v-theme-on-surface));
+.section-head__context strong {
   font-weight: 600;
+  color: rgba(var(--v-theme-on-surface), 0.75);
+}
+.section-head__context .sep {
+  color: rgba(var(--v-theme-on-surface), 0.25);
 }
 
 /* KPI cards */
@@ -974,10 +1014,10 @@ const currentRangeLabel = computed(
 /* Section headers */
 .section-head {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 14px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
 }
 .section-head__title {
@@ -986,14 +1026,23 @@ const currentRangeLabel = computed(
   color: rgb(var(--v-theme-on-surface));
 }
 .section-head h2 {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   margin: 0;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
+  line-height: 1.15;
+  color: rgb(var(--v-theme-on-surface));
+}
+/* Needs Attention: dominant layer heading */
+.section-head--attention h2 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
 }
 .section-head__meta {
   display: flex;
   gap: 8px;
+  align-items: center;
 }
 
 /* Alert groups — progressive visual hierarchy */
