@@ -2,7 +2,7 @@
 
 ## What is this?
 
-Build a desktop-first operational dashboard for a consumer audio company that designs, manufactures, distributes, and sells professional audio products including amplifiers, speakers, audio monitors, headphones, and accessories.
+Build a desktop-first operational dashboard for a Blue Radio Audio Labs, a fictional consumer audio company that designs, manufactures, distributes, and sells professional audio products including amplifiers, speakers, audio monitors, headphones, and accessories.
 
 The primary user is the Director of Product & Commercial Operations.
 

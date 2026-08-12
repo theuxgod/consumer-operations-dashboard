@@ -76,6 +76,14 @@ const trend = computed(
     { period: string; revenue: number; target: number; units: number }[],
 )
 
+// Scale factor aligns product-level revenue/units to the selected date range.
+// salesVsTarget, inventory, and rate fields are point-in-time and not scaled.
+const rangeFactor = computed(() => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const quarterRevenue = (data.kpis[selectedRegion.value] as any).quarter.revenue.value as number
+  return quarterRevenue > 0 ? (kpi.value.revenue.value as number) / quarterRevenue : 1
+})
+
 interface ProductRow {
   id: string
   name: string
@@ -96,19 +104,20 @@ const products = computed<ProductRow[]>(() =>
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data.products.map((p: any) => {
     const m = p.regions[selectedRegion.value]
+    const f = rangeFactor.value
     return {
       id: p.id,
       name: p.name,
       category: p.category,
-      revenue: m.revenue,
-      unitsSold: m.unitsSold,
-      salesVsTarget: m.salesVsTarget,
-      inventoryQty: m.inventoryQty,
-      dailySalesRate: m.dailySalesRate,
-      daysOfSupply: m.daysOfSupply,
-      returnRate: m.returnRate,
-      repairRate: m.repairRate,
-      revenueAtRisk: m.revenueAtRisk,
+      revenue: Math.round(m.revenue * f),
+      unitsSold: Math.round(m.unitsSold * f),
+      salesVsTarget: m.salesVsTarget,      // ratio — invariant under uniform scaling
+      inventoryQty: m.inventoryQty,        // point-in-time
+      dailySalesRate: m.dailySalesRate,    // point-in-time
+      daysOfSupply: m.daysOfSupply,        // point-in-time
+      returnRate: m.returnRate,            // point-in-time ratio
+      repairRate: m.repairRate,            // point-in-time ratio
+      revenueAtRisk: m.revenueAtRisk,      // forward-looking, not historical
       status: m.status,
     }
   }),
