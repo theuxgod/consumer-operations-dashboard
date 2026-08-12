@@ -476,6 +476,63 @@ const currentRegionLabel = computed(
 const currentRangeLabel = computed(
   () => rangeOptions.find((r) => r.key === selectedRange.value)?.label ?? '',
 )
+
+// ---- Sales Performance insight -------------------------------------------
+const chartInsight = computed(() => {
+  const k = kpi.value
+  const pts = trend.value
+  const revenue = k.revenue.value
+  const target = k.revenue.target
+  const variance = revenue - target
+  const aboveTarget = variance >= 0
+  const variancePct = ((revenue / Math.max(target, 1)) - 1) * 100
+  const first = pts[0]?.revenue ?? 0
+  const last = pts[pts.length - 1]?.revenue ?? 0
+  const growthPct = first > 0 ? ((last - first) / first) * 100 : 0
+  const rangeLabel = currentRangeLabel.value.toLowerCase()
+
+  let sentence = ''
+  if (aboveTarget && growthPct > 5)
+    sentence = `Revenue is tracking ahead of target and accelerating — strong momentum across the ${rangeLabel}.`
+  else if (aboveTarget && growthPct >= -5)
+    sentence = `Revenue is above target with stable performance across the ${rangeLabel}.`
+  else if (aboveTarget)
+    sentence = `Revenue is ahead of target overall, but has softened recently — watch for deceleration.`
+  else if (!aboveTarget && growthPct > 5)
+    sentence = `Revenue is below target but improving — recent momentum is narrowing the gap.`
+  else if (!aboveTarget && growthPct >= -5)
+    sentence = `Revenue is running below target with no significant change in trajectory.`
+  else
+    sentence = `Revenue is below target and losing momentum — the shortfall widened over the ${rangeLabel}.`
+
+  return { aboveTarget, variancePct, variance, revenue, delta: k.revenue.deltaPct, sentence }
+})
+
+// ---- Target line label (inline Chart.js plugin) -------------------------
+const chartPlugins = computed(() => {
+  const fmt = usdCompact
+  return [{
+    id: 'targetLabel',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    afterDraw(chart: any) {
+      const ds = chart.data.datasets?.[1]
+      if (!ds?.data?.length) return
+      const targetVal = Number(ds.data[0])
+      if (!isFinite(targetVal) || targetVal === 0) return
+      const y = chart.scales.y?.getPixelForValue(targetVal)
+      const x = chart.scales.x?.right
+      if (y == null || x == null) return
+      const ctx = chart.ctx as CanvasRenderingContext2D
+      ctx.save()
+      ctx.font = '500 10px system-ui, sans-serif'
+      ctx.fillStyle = '#6b7480'
+      ctx.textAlign = 'right'
+      ctx.textBaseline = 'bottom'
+      ctx.fillText(`${fmt.format(targetVal)} target`, x, y - 4)
+      ctx.restore()
+    },
+  }]
+})
 </script>
 
 <template>
@@ -814,12 +871,64 @@ const currentRangeLabel = computed(
             </div>
           </div>
           <span class="text-medium-emphasis text-caption">
-            Revenue vs. target · {{ currentRegionLabel }}
+            {{ currentRegionLabel }} · {{ currentRangeLabel }}
           </span>
         </div>
-        <v-card class="pa-4 pa-md-6" rounded="lg" border>
+        <v-card rounded="lg" border>
+          <!-- Insight strip -->
+          <div class="chart-insight">
+            <div class="chart-insight__left">
+              <div class="chart-insight__headline">
+                <span
+                  class="insight-value tabular"
+                  :class="chartInsight.aboveTarget ? 'text-success' : 'text-error'"
+                >
+                  <v-icon
+                    :icon="chartInsight.aboveTarget ? 'mdi-arrow-up' : 'mdi-arrow-down'"
+                    size="20"
+                    style="margin-bottom: 2px"
+                  />
+                  {{ Math.abs(chartInsight.variancePct).toFixed(1) }}%
+                </span>
+                <span class="insight-label">
+                  {{ chartInsight.aboveTarget ? 'above' : 'below' }} target
+                </span>
+              </div>
+              <p class="chart-trend-sentence">{{ chartInsight.sentence }}</p>
+            </div>
+
+            <!-- Supporting metrics — visually secondary to KPI cards -->
+            <div class="chart-metrics">
+              <div class="chart-metric">
+                <span class="chart-metric__label">Revenue</span>
+                <span class="chart-metric__value tabular">
+                  {{ usdCompact.format(chartInsight.revenue) }}
+                </span>
+              </div>
+              <div class="chart-metric">
+                <span class="chart-metric__label">vs. Target</span>
+                <span
+                  class="chart-metric__value tabular"
+                  :class="chartInsight.aboveTarget ? 'text-success' : 'text-error'"
+                >
+                  {{ chartInsight.variance >= 0 ? '+' : '' }}{{ usdCompact.format(chartInsight.variance) }}
+                </span>
+              </div>
+              <div class="chart-metric">
+                <span class="chart-metric__label">vs. Prev. Period</span>
+                <span
+                  class="chart-metric__value tabular"
+                  :class="chartInsight.delta >= 0 ? 'text-success' : 'text-error'"
+                >
+                  {{ signedPct(chartInsight.delta) }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart -->
           <div class="chart-wrap">
-            <Line :data="chartData" :options="chartOptions" />
+            <Line :data="chartData" :options="chartOptions" :plugins="chartPlugins" />
           </div>
         </v-card>
       </section>
@@ -1330,9 +1439,84 @@ const currentRangeLabel = computed(
   white-space: nowrap;
 }
 
+/* Sales Performance — insight strip */
+.chart-insight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 24px 18px;
+  border-bottom: 1px solid rgba(var(--v-theme-on-surface), 0.07);
+  flex-wrap: wrap;
+}
+.chart-insight__left {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+.chart-insight__headline {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.insight-value {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.insight-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(var(--v-theme-on-surface), 0.45);
+}
+.chart-trend-sentence {
+  font-size: 13px;
+  color: rgba(var(--v-theme-on-surface), 0.55);
+  margin: 0;
+  max-width: 480px;
+  line-height: 1.55;
+}
+.chart-metrics {
+  display: flex;
+  gap: 0;
+  flex: none;
+}
+.chart-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 20px;
+  border-left: 1px solid rgba(var(--v-theme-on-surface), 0.08);
+}
+.chart-metric:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+.chart-metric__label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: rgba(var(--v-theme-on-surface), 0.38);
+  white-space: nowrap;
+}
+.chart-metric__value {
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -0.3px;
+  color: rgb(var(--v-theme-on-surface));
+  line-height: 1.1;
+}
+
 /* Chart */
 .chart-wrap {
-  height: 320px;
+  height: 280px;
+  padding: 14px 20px 16px;
 }
 
 /* Table */
