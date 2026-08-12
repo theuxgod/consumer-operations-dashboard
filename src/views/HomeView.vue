@@ -84,6 +84,7 @@ interface ProductRow {
   unitsSold: number
   salesVsTarget: number
   inventoryQty: number
+  dailySalesRate: number
   daysOfSupply: number
   returnRate: number
   repairRate: number
@@ -103,6 +104,7 @@ const products = computed<ProductRow[]>(() =>
       unitsSold: m.unitsSold,
       salesVsTarget: m.salesVsTarget,
       inventoryQty: m.inventoryQty,
+      dailySalesRate: m.dailySalesRate,
       daysOfSupply: m.daysOfSupply,
       returnRate: m.returnRate,
       repairRate: m.repairRate,
@@ -185,42 +187,49 @@ const alerts = computed<Alert[]>(() => {
 
   for (const p of products.value) {
     const base = { productName: p.name, category: p.category }
+    const demandSurge = p.salesVsTarget > 1.18
+    const inventoryCritical = p.daysOfSupply < 7
+    const inventoryLow = p.daysOfSupply >= 7 && p.daysOfSupply < 14
 
-    if (p.daysOfSupply < 7) {
+    // ---- Inventory risk: absorbs demand surge when demand is the driver ----
+    if (inventoryCritical) {
+      const tags: Alert['tags'] = [
+        { label: 'Days of supply', value: `${p.daysOfSupply}d` },
+        { label: 'Revenue at risk', value: usdCompact.format(p.revenueAtRisk) },
+      ]
+      if (demandSurge) tags.splice(1, 0, { label: 'Sales vs. target', value: fmtPct(p.salesVsTarget, 0) })
       out.push({
-        ...base,
-        id: id(),
-        severity: 'critical',
-        title: `${p.name} — ${p.daysOfSupply} days of inventory left`,
-        what: `${num.format(p.inventoryQty)} units in stock against a ${fmtPct(p.salesVsTarget - 1, 0)} above-forecast run rate.`,
-        why: `Demand will exhaust stock before replenishment, putting ${usdCompact.format(p.revenueAtRisk)} of revenue at risk.`,
-        tags: [
-          { label: 'Days of supply', value: `${p.daysOfSupply}d` },
-          { label: 'Revenue at risk', value: usdCompact.format(p.revenueAtRisk) },
-        ],
-        sortRisk: p.revenueAtRisk,
+        ...base, id: id(), severity: 'critical',
+        title: `${p.name} — stockout risk in ${p.daysOfSupply} days`,
+        what: demandSurge
+          ? `${num.format(p.inventoryQty)} units remain. Demand is running ${fmtPct(p.salesVsTarget - 1, 0)} above forecast, accelerating depletion.`
+          : `${num.format(p.inventoryQty)} units in stock against a run rate of ${p.dailySalesRate}/day.`,
+        why: `At current velocity, stock will be exhausted before replenishment arrives, putting ${usdCompact.format(p.revenueAtRisk)} of revenue at risk.`,
+        tags, sortRisk: p.revenueAtRisk,
       })
-    } else if (p.daysOfSupply < 14) {
+    } else if (inventoryLow) {
+      const tags: Alert['tags'] = [
+        { label: 'Days of supply', value: `${p.daysOfSupply}d` },
+        { label: 'Revenue at risk', value: usdCompact.format(p.revenueAtRisk) },
+      ]
+      if (demandSurge) tags.splice(1, 0, { label: 'Sales vs. target', value: fmtPct(p.salesVsTarget, 0) })
       out.push({
-        ...base,
-        id: id(),
-        severity: 'warning',
-        title: `${p.name} — inventory below two-week cover`,
-        what: `${p.daysOfSupply} days of supply remaining at current sales velocity.`,
-        why: `Requires expedited replenishment to avoid a stockout; ${usdCompact.format(p.revenueAtRisk)} of revenue is exposed.`,
-        tags: [
-          { label: 'Days of supply', value: `${p.daysOfSupply}d` },
-          { label: 'Revenue at risk', value: usdCompact.format(p.revenueAtRisk) },
-        ],
-        sortRisk: p.revenueAtRisk,
+        ...base, id: id(), severity: 'warning',
+        title: demandSurge
+          ? `${p.name} — inventory thinning as demand accelerates`
+          : `${p.name} — inventory below two-week cover`,
+        what: demandSurge
+          ? `${p.daysOfSupply} days of cover with demand tracking ${fmtPct(p.salesVsTarget - 1, 0)} above forecast.`
+          : `${p.daysOfSupply} days of supply remaining at current sales velocity.`,
+        why: demandSurge
+          ? `If demand holds, inventory could fall to critical levels before replenishment; ${usdCompact.format(p.revenueAtRisk)} of revenue is exposed.`
+          : `Requires expedited replenishment to avoid a stockout; ${usdCompact.format(p.revenueAtRisk)} of revenue is exposed.`,
+        tags, sortRisk: p.revenueAtRisk,
       })
-    }
-
-    if (p.salesVsTarget > 1.18 && p.daysOfSupply < 30) {
+    } else if (demandSurge && p.daysOfSupply < 30) {
+      // Standalone demand surge: inventory not yet critical but supply window is narrowing
       out.push({
-        ...base,
-        id: id(),
-        severity: 'warning',
+        ...base, id: id(), severity: 'warning',
         title: `${p.name} — selling faster than forecast`,
         what: `Tracking ${fmtPct(p.salesVsTarget - 1, 0)} above target with ${p.daysOfSupply} days of cover.`,
         why: `Accelerating demand could turn into a stockout within the period if supply is not increased.`,
@@ -232,12 +241,27 @@ const alerts = computed<Alert[]>(() => {
       })
     }
 
-    if (p.returnRate > 0.08) {
+    // ---- Quality signals: consolidate when return + repair both elevated ----
+    const highReturns = p.returnRate > 0.08
+    const highRepairs = p.repairRate > 0.05
+    if (highReturns && highRepairs) {
       const affected = p.revenue * Math.max(0, p.returnRate - RETURN_BASELINE)
       out.push({
-        ...base,
-        id: id(),
-        severity: 'critical',
+        ...base, id: id(), severity: 'critical',
+        title: `${p.name} — elevated returns and repairs`,
+        what: `Return rate ${fmtPct(p.returnRate)} and repair rate ${fmtPct(p.repairRate)}, both well above portfolio norms.`,
+        why: `Co-occurring return and repair spikes point to a product quality or reliability issue; ~${usdCompact.format(affected)} in revenue is affected.`,
+        tags: [
+          { label: 'Return rate', value: fmtPct(p.returnRate) },
+          { label: 'Repair rate', value: fmtPct(p.repairRate) },
+          { label: 'Affected revenue', value: usdCompact.format(affected) },
+        ],
+        sortRisk: affected,
+      })
+    } else if (highReturns) {
+      const affected = p.revenue * Math.max(0, p.returnRate - RETURN_BASELINE)
+      out.push({
+        ...base, id: id(), severity: 'critical',
         title: `${p.name} — return rate ${fmtPct(p.returnRate)}`,
         what: `Returns are running at ${fmtPct(p.returnRate)} versus a ~3% portfolio baseline.`,
         why: `Elevated returns erode margin and may signal a quality or expectation gap; ~${usdCompact.format(affected)} in revenue is affected.`,
@@ -247,13 +271,9 @@ const alerts = computed<Alert[]>(() => {
         ],
         sortRisk: affected,
       })
-    }
-
-    if (p.repairRate > 0.05) {
+    } else if (highRepairs) {
       out.push({
-        ...base,
-        id: id(),
-        severity: 'warning',
+        ...base, id: id(), severity: 'warning',
         title: `${p.name} — repair rate ${fmtPct(p.repairRate)}`,
         what: `Repair requests are at ${fmtPct(p.repairRate)}, well above the ~1.5% category norm.`,
         why: `A rising repair rate increases warranty cost and points to a potential reliability issue.`,
@@ -262,11 +282,10 @@ const alerts = computed<Alert[]>(() => {
       })
     }
 
+    // ---- Underperformance ------------------------------------------------
     if (p.salesVsTarget < 0.8 && p.daysOfSupply > 45) {
       out.push({
-        ...base,
-        id: id(),
-        severity: 'info',
+        ...base, id: id(), severity: 'info',
         title: `${p.name} — ${fmtPct(1 - p.salesVsTarget, 0)} below target`,
         what: `Revenue is ${fmtPct(1 - p.salesVsTarget, 0)} under plan with ${p.daysOfSupply} days of stock on hand.`,
         why: `Slow sell-through with high inventory ties up working capital and may warrant promotion or price review.`,
