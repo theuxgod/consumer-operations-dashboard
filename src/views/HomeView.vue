@@ -546,7 +546,25 @@ const chartPlugins = computed(() => {
     <header class="dash-header">
       <div class="dash-header__inner">
         <div class="dash-header__brand">
-          <v-icon icon="mdi-waveform" color="primary" size="28" />
+          <!-- Brand mark: dot + two arcs = radio/audio signal -->
+          <svg
+            class="brand-mark"
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle cx="5" cy="14" r="2.5" fill="currentColor" />
+            <path
+              d="M11 9.5C13.8 9.5 16 11.5 16 14C16 16.5 13.8 18.5 11 18.5"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            />
+            <path
+              d="M14.5 5C20.5 5 25 9 25 14C25 19 20.5 23 14.5 23"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            />
+          </svg>
           <div>
             <h1 class="dash-title">{{ data.meta.company }}</h1>
             <p class="dash-subtitle">Product &amp; Commercial Operations</p>
@@ -1036,6 +1054,10 @@ const chartPlugins = computed(() => {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+.brand-mark {
+  color: rgb(var(--v-theme-primary));
+  flex: none;
 }
 .dash-title {
   font-size: 20px;

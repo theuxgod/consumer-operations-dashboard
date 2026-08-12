@@ -310,6 +310,18 @@ It should feel:
 - Minimal - lots of white space
 - Charts should use cohesive color palette - not rainbow
 
+### Brand Identity
+
+The company is named Blue Radio Audio Labs.
+
+The brand should feel like a credible audio technology and engineering company rather than a generic SaaS product.
+
+Use a restrained blue as the primary brand color. Brand Blue should primarily communicate identitiy, navigation, and selected states rather than operational status.
+
+The header should display Blue Radio Audio Labs as the primary identity and Product & COmmercial Operations as secondary application context.
+
+Use a simple, restrained audio inspired brand mark. Avaoid gradients, decorative multicolor branding, or and overly elaborate logo.
+
 ### Design Principles
 
 Establish strong visual hierarchy.
