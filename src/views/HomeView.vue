@@ -300,6 +300,28 @@ const severityMeta: Record<
   info: { color: 'info', icon: 'mdi-information', label: 'Info' },
 }
 
+// ---- progressive disclosure by severity -----------------------------------
+const WARNING_PREVIEW = 3
+const showAllWarnings = ref(false)
+const showAllInfo = ref(false)
+
+const criticalAlerts = computed(() =>
+  alerts.value.filter((a) => a.severity === 'critical'),
+)
+const warningAlerts = computed(() =>
+  alerts.value.filter((a) => a.severity === 'warning'),
+)
+const infoAlerts = computed(() => alerts.value.filter((a) => a.severity === 'info'))
+
+const visibleWarnings = computed(() =>
+  showAllWarnings.value
+    ? warningAlerts.value
+    : warningAlerts.value.slice(0, WARNING_PREVIEW),
+)
+const hiddenWarningCount = computed(() =>
+  Math.max(0, warningAlerts.value.length - WARNING_PREVIEW),
+)
+
 // ---- status chips ---------------------------------------------------------
 const statusMeta: Record<string, { label: string; color: string }> = {
   critical: { label: 'Critical', color: 'error' },
@@ -591,56 +613,155 @@ const currentRangeLabel = computed(
           </div>
         </div>
 
-        <v-row dense>
-          <v-col
-            v-for="alert in alerts"
-            :key="alert.id"
-            cols="12"
-            md="6"
-          >
-            <v-card
-              class="alert-card"
-              :class="`alert-card--${alert.severity}`"
-              rounded="lg"
-              border
-            >
-              <div class="alert-card__head">
-                <v-icon
-                  :icon="severityMeta[alert.severity].icon"
-                  :color="severityMeta[alert.severity].color"
-                  size="20"
-                />
-                <div class="alert-card__titles">
-                  <span class="alert-card__title">{{ alert.title }}</span>
-                  <span class="alert-card__category">{{ alert.category }}</span>
-                </div>
-                <v-chip
-                  :color="severityMeta[alert.severity].color"
-                  size="x-small"
-                  variant="tonal"
-                  label
-                >
-                  {{ severityMeta[alert.severity].label }}
-                </v-chip>
-              </div>
-              <p class="alert-card__what">{{ alert.what }}</p>
-              <p class="alert-card__why">{{ alert.why }}</p>
-              <div class="alert-card__tags">
-                <div v-for="t in alert.tags" :key="t.label" class="alert-tag">
-                  <span class="alert-tag__label">{{ t.label }}</span>
-                  <span class="alert-tag__value tabular">{{ t.value }}</span>
-                </div>
-              </div>
-            </v-card>
-          </v-col>
+        <template v-if="alerts.length">
+          <!-- Critical: dominant, all shown -->
+          <div v-if="criticalAlerts.length" class="alert-group">
+            <div class="alert-group__label alert-group__label--critical">
+              <span
+                class="alert-group__dot"
+                :style="{ background: 'rgb(var(--v-theme-error))' }"
+              />
+              Critical · {{ criticalAlerts.length }}
+            </div>
+            <v-row dense>
+              <v-col
+                v-for="alert in criticalAlerts"
+                :key="alert.id"
+                cols="12"
+                md="6"
+              >
+                <v-card class="alert-card alert-card--critical" rounded="lg" border>
+                  <div class="alert-card__head">
+                    <v-icon
+                      :icon="severityMeta[alert.severity].icon"
+                      :color="severityMeta[alert.severity].color"
+                      size="22"
+                    />
+                    <div class="alert-card__titles">
+                      <span class="alert-card__title">{{ alert.title }}</span>
+                      <span class="alert-card__category">{{ alert.category }}</span>
+                    </div>
+                    <v-chip
+                      :color="severityMeta[alert.severity].color"
+                      size="x-small"
+                      variant="flat"
+                      label
+                    >
+                      {{ severityMeta[alert.severity].label }}
+                    </v-chip>
+                  </div>
+                  <p class="alert-card__what">{{ alert.what }}</p>
+                  <p class="alert-card__why">{{ alert.why }}</p>
+                  <div class="alert-card__tags">
+                    <div v-for="t in alert.tags" :key="t.label" class="alert-tag">
+                      <span class="alert-tag__label">{{ t.label }}</span>
+                      <span class="alert-tag__value tabular">{{ t.value }}</span>
+                    </div>
+                  </div>
+                </v-card>
+              </v-col>
+            </v-row>
+          </div>
 
-          <v-col v-if="!alerts.length" cols="12">
-            <v-card class="pa-6 text-center text-medium-emphasis" rounded="lg" border>
-              <v-icon icon="mdi-check-circle-outline" color="success" size="28" />
-              <p class="mt-2">No operational exceptions for this selection.</p>
-            </v-card>
-          </v-col>
-        </v-row>
+          <!-- Warnings: reduced weight, top 3 with progressive disclosure -->
+          <div v-if="warningAlerts.length" class="alert-group">
+            <div class="alert-group__label">
+              <span
+                class="alert-group__dot"
+                :style="{ background: 'rgb(var(--v-theme-warning))' }"
+              />
+              Warnings · {{ warningAlerts.length }}
+            </div>
+            <v-row dense>
+              <v-col
+                v-for="alert in visibleWarnings"
+                :key="alert.id"
+                cols="12"
+                sm="6"
+                lg="4"
+              >
+                <v-card class="alert-card alert-card--warning" rounded="lg" border>
+                  <div class="alert-card__head">
+                    <v-icon
+                      :icon="severityMeta[alert.severity].icon"
+                      :color="severityMeta[alert.severity].color"
+                      size="18"
+                    />
+                    <div class="alert-card__titles">
+                      <span class="alert-card__title">{{ alert.title }}</span>
+                      <span class="alert-card__category">{{ alert.category }}</span>
+                    </div>
+                  </div>
+                  <p class="alert-card__what">{{ alert.what }}</p>
+                  <div class="alert-card__tags">
+                    <div v-for="t in alert.tags" :key="t.label" class="alert-tag">
+                      <span class="alert-tag__label">{{ t.label }}</span>
+                      <span class="alert-tag__value tabular">{{ t.value }}</span>
+                    </div>
+                  </div>
+                </v-card>
+              </v-col>
+            </v-row>
+            <div v-if="hiddenWarningCount > 0" class="alert-more">
+              <v-btn
+                variant="text"
+                color="warning"
+                size="small"
+                :append-icon="showAllWarnings ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                @click="showAllWarnings = !showAllWarnings"
+              >
+                {{
+                  showAllWarnings
+                    ? 'Show fewer warnings'
+                    : `View ${hiddenWarningCount} more warning${hiddenWarningCount > 1 ? 's' : ''}`
+                }}
+              </v-btn>
+            </div>
+          </div>
+
+          <!-- Info: lowest weight, collapsed compact list -->
+          <div v-if="infoAlerts.length" class="alert-group">
+            <div class="alert-group__label alert-group__label--row">
+              <span
+                class="alert-group__dot"
+                :style="{ background: 'rgb(var(--v-theme-info))' }"
+              />
+              Info · {{ infoAlerts.length }}
+              <v-btn
+                variant="text"
+                size="x-small"
+                class="ml-1"
+                :append-icon="showAllInfo ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                @click="showAllInfo = !showAllInfo"
+              >
+                {{ showAllInfo ? 'Hide' : 'View' }}
+              </v-btn>
+            </div>
+            <v-expand-transition>
+              <div v-show="showAllInfo" class="info-list">
+                <div v-for="alert in infoAlerts" :key="alert.id" class="info-row">
+                  <v-icon
+                    :icon="severityMeta[alert.severity].icon"
+                    color="info"
+                    size="16"
+                  />
+                  <span class="info-row__title">{{ alert.title }}</span>
+                  <span class="info-row__what">{{ alert.what }}</span>
+                </div>
+              </div>
+            </v-expand-transition>
+          </div>
+        </template>
+
+        <v-card
+          v-else
+          class="pa-6 text-center text-medium-emphasis"
+          rounded="lg"
+          border
+        >
+          <v-icon icon="mdi-check-circle-outline" color="success" size="28" />
+          <p class="mt-2">No operational exceptions for this selection.</p>
+        </v-card>
       </section>
 
       <!-- Performance trend -->
@@ -875,6 +996,38 @@ const currentRangeLabel = computed(
   gap: 8px;
 }
 
+/* Alert groups — progressive visual hierarchy */
+.alert-group {
+  margin-bottom: 20px;
+}
+.alert-group:last-child {
+  margin-bottom: 0;
+}
+.alert-group__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(var(--v-theme-on-surface), 0.5);
+  margin: 2px 0 12px;
+}
+.alert-group__label--critical {
+  font-size: 12px;
+  color: rgb(var(--v-theme-error));
+}
+.alert-group__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+}
+.alert-more {
+  margin-top: 6px;
+}
+
 /* Alert cards */
 .alert-card {
   padding: 16px 18px;
@@ -891,13 +1044,37 @@ const currentRangeLabel = computed(
   width: 3px;
 }
 .alert-card--critical::before {
-  background: #f04438;
+  background: rgb(var(--v-theme-error));
+  width: 4px;
 }
 .alert-card--warning::before {
-  background: #f79009;
+  background: rgb(var(--v-theme-warning));
+  width: 2px;
+  opacity: 0.8;
 }
 .alert-card--info::before {
-  background: #5b9dff;
+  background: rgb(var(--v-theme-info));
+}
+
+/* Critical: dominant */
+.alert-card--critical {
+  background: rgba(var(--v-theme-error), 0.06);
+  border-color: rgba(var(--v-theme-error), 0.28) !important;
+  padding: 18px 20px;
+}
+.alert-card--critical .alert-card__title {
+  font-size: 15.5px;
+}
+
+/* Warning: reduced weight */
+.alert-card--warning {
+  padding: 13px 15px;
+}
+.alert-card--warning .alert-card__title {
+  font-size: 13.5px;
+}
+.alert-card--warning .alert-card__what {
+  font-size: 12.5px;
 }
 .alert-card__head {
   display: flex;
@@ -957,6 +1134,41 @@ const currentRangeLabel = computed(
   font-size: 14px;
   font-weight: 600;
   color: rgb(var(--v-theme-on-surface));
+}
+
+/* Info: lowest weight compact rows */
+.alert-group__label--row {
+  margin-bottom: 8px;
+}
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 2px;
+}
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border: 1px solid rgba(var(--v-theme-on-surface), 0.07);
+  background: rgba(var(--v-theme-on-surface), 0.02);
+  border-radius: 8px;
+  min-width: 0;
+}
+.info-row__title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgb(var(--v-theme-on-surface));
+  white-space: nowrap;
+  flex: none;
+}
+.info-row__what {
+  font-size: 12px;
+  color: rgba(var(--v-theme-on-surface), 0.55);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Chart */
