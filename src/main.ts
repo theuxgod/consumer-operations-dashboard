@@ -51,7 +51,7 @@ const vuetify = createVuetify({
     defaultSet: 'mdi',
   },
   theme: {
-    defaultTheme: 'operationsDark',
+    defaultTheme: 'operationsLight',
     themes: {
       operationsDark,
       operationsLight,

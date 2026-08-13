@@ -543,7 +543,7 @@ const chartPlugins = computed(() => {
 <template>
   <div class="dash">
     <!-- Header -->
-    <header class="dash-header">
+    <header class="dash-header" :class="{ 'dash-header--dark': isDark }">
       <div class="dash-header__inner">
         <div class="dash-header__brand">
           <!-- Brand mark: dot + two arcs = radio/audio signal -->
@@ -1040,6 +1040,11 @@ const chartPlugins = computed(() => {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   margin: 0 -24px 24px;
   padding: 0 24px;
+}
+/* Dark mode: distinct blue-navy surface that separates from the dark body */
+.dash-header--dark {
+  background: #0f2245;
+  border-bottom-color: rgba(80, 148, 255, 0.2);
 }
 .dash-header__inner {
   display: flex;
