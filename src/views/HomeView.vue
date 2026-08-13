@@ -1031,14 +1031,13 @@ const chartPlugins = computed(() => {
   padding: 0 24px 48px;
 }
 
-/* Header */
+/* Header — always brand navy, independent of body theme */
 .dash-header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(var(--v-theme-background), 0.82);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(var(--v-theme-on-surface), 0.08);
+  background: #0c1528;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   margin: 0 -24px 24px;
   padding: 0 24px;
 }
@@ -1056,25 +1055,65 @@ const chartPlugins = computed(() => {
   gap: 12px;
 }
 .brand-mark {
-  color: rgb(var(--v-theme-primary));
+  /* fixed bright blue — always legible on brand navy */
+  color: #5b9dff;
   flex: none;
 }
 .dash-title {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
-  color: rgb(var(--v-theme-on-surface));
+  color: rgba(255, 255, 255, 0.95);
   margin: 0;
   letter-spacing: -0.2px;
 }
 .dash-subtitle {
   font-size: 12.5px;
-  color: rgba(var(--v-theme-on-surface), 0.55);
+  color: rgba(255, 255, 255, 0.45);
   margin: 2px 0 0;
 }
 .dash-header__filters {
   display: flex;
   align-items: center;
+}
+
+/* Force all header controls to be light-on-dark regardless of body theme */
+.dash-header .ctrl-group {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+}
+.dash-header .ctrl-sep {
+  background: rgba(255, 255, 255, 0.12);
+}
+.dash-header .ctrl-field-label {
+  color: rgba(255, 255, 255, 0.38);
+  border-right-color: rgba(255, 255, 255, 0.1);
+}
+.dash-header .ctrl-prepend-icon {
+  color: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1;
+}
+.dash-header .ctrl-theme-btn {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.dash-header .ctrl-theme-btn:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  opacity: 1;
+}
+.dash-header .ctrl-group :deep(.v-field__input) {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+.dash-header .ctrl-group :deep(.v-select__selection-text) {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+.dash-header .ctrl-group :deep(.v-field__append-inner .v-icon) {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+.dash-header .ctrl-theme-btn :deep(.v-icon) {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.dash-header .ctrl-theme-btn:hover :deep(.v-icon) {
+  color: #fff !important;
 }
 
 /* Unified filter control group */
